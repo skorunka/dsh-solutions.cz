@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSh Solutions s.r.o. — Software Development & SaaS</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="DSh Solutions s.r.o. — Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
+  <meta name="keywords" content="software development, SaaS, web applications, Czech Republic, DSh Solutions">
+  <meta name="author" content="DSh Solutions s.r.o.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dsh-solutions.cz/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dsh-solutions.cz/">
+  <meta property="og:title" content="DSh Solutions s.r.o. — Software Development & SaaS">
+  <meta property="og:description" content="Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
+  <meta property="og:image" content="https://dsh-solutions.cz/og-image.png">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="DSh Solutions s.r.o.">
+
+  <!-- Facebook Domain Verification (replace with your actual code) -->
+  <meta name="facebook-domain-verification" content="YOUR_FACEBOOK_VERIFICATION_CODE">
+
+  <!-- Google Site Verification (replace with your actual code) -->
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DSh Solutions s.r.o. — Software Development & SaaS">
+  <meta name="twitter:description" content="Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
+  <meta name="twitter:image" content="https://dsh-solutions.cz/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">D</span>
+        <span class="nav__logo-text">Sh Solutions</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#about" class="nav__link">O nás</a>
+        <a href="#services" class="nav__link">Služby</a>
+        <a href="#portfolio" class="nav__link">Portfolio</a>
+        <a href="#contact" class="nav__link">Kontakt</a>
+      </div>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Přepnout tmavý/světlý režim">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Otevřít menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
+    <div class="hero__container">
+      <div class="hero__badge reveal">Software Development & SaaS</div>
+      <h1 class="hero__title reveal">
+        Tvoříme <span class="gradient-text">digitální řešení</span> pro moderní svět
+      </h1>
+      <p class="hero__subtitle reveal">
+        DSh Solutions je česká softwarová společnost zaměřená na vývoj webových aplikací,
+        SaaS produktů a zakázkového softwaru.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#contact" class="btn btn--primary">Kontaktujte nás</a>
+        <a href="#portfolio" class="btn btn--outline">Naše projekty</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">O nás</span>
+        <h2 class="section__title">Spolehlivý partner pro váš <span class="gradient-text">digitální růst</span></h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Od roku 2014</h3>
+          <p>Společnost DSh Solutions s.r.o. byla založena v roce 2014 a od té doby dodává kvalitní softwarová řešení pro české i zahraniční klienty.</p>
+        </div>
+        <div class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Moderní technologie</h3>
+          <p>Využíváme nejnovější technologie a osvědčené postupy pro tvorbu škálovatelných, bezpečných a výkonných aplikací.</p>
+        </div>
+        <div class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Individuální přístup</h3>
+          <p>Ke každému projektu přistupujeme individuálně. Nasloucháme vašim potřebám a navrhujeme řešení na míru.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Služby</span>
+        <h2 class="section__title">Co pro vás <span class="gradient-text">můžeme udělat</span></h2>
+      </div>
+      <div class="services__grid">
+        <div class="services__card reveal">
+          <div class="services__number">01</div>
+          <h3>Webové aplikace</h3>
+          <p>Vývoj moderních webových aplikací s důrazem na uživatelský zážitek, výkon a bezpečnost.</p>
+          <ul class="services__tags">
+            <li>React</li><li>Next.js</li><li>Node.js</li><li>TypeScript</li>
+          </ul>
+        </div>
+        <div class="services__card reveal">
+          <div class="services__number">02</div>
+          <h3>SaaS produkty</h3>
+          <p>Návrh, vývoj a provoz SaaS řešení od prvotní myšlenky po plně funkční produkt s tisíci uživateli.</p>
+          <ul class="services__tags">
+            <li>Cloud</li><li>API</li><li>Škálovatelnost</li><li>CI/CD</li>
+          </ul>
+        </div>
+        <div class="services__card reveal">
+          <div class="services__number">03</div>
+          <h3>Zakázkový software</h3>
+          <p>Tvorba softwarových řešení na míru — od interních nástrojů po komplexní podnikové systémy.</p>
+          <ul class="services__tags">
+            <li>Backend</li><li>Frontend</li><li>Databáze</li><li>Integrace</li>
+          </ul>
+        </div>
+        <div class="services__card reveal">
+          <div class="services__number">04</div>
+          <h3>Konzultace & podpora</h3>
+          <p>Technické konzultace, code review, architektonický návrh a dlouhodobá podpora vašich projektů.</p>
+          <ul class="services__tags">
+            <li>Architektura</li><li>DevOps</li><li>Bezpečnost</li><li>Optimalizace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Portfolio</span>
+        <h2 class="section__title">Naše <span class="gradient-text">projekty</span></h2>
+      </div>
+      <div class="portfolio__showcase reveal">
+        <div class="portfolio__card portfolio__card--featured">
+          <div class="portfolio__card-glow"></div>
+          <div class="portfolio__card-content">
+            <div class="portfolio__card-header">
+              <span class="portfolio__card-badge">SaaS produkt</span>
+              <span class="portfolio__card-badge portfolio__card-badge--live">Live</span>
+            </div>
+            <h3 class="portfolio__card-title">Sejit se</h3>
+            <p class="portfolio__card-desc">
+              Platforma pro správu událostí a docházky. Umožňuje organizacím koordinovat skupinové aktivity,
+              spravovat účast členů, sledovat docházku a organizovat pravidelné i jednorázové události.
+            </p>
+            <ul class="portfolio__card-features">
+              <li>Tvorba a správa událostí (pravidelné i jednorázové)</li>
+              <li>RSVP systém s čekací listinou</li>
+              <li>Synchronizace kalendáře (iCal)</li>
+              <li>Správa organizací a rolí (admin, manažer, člen)</li>
+              <li>Analytika docházky a statistiky</li>
+              <li>Podpora pro sportovní kluby, komunity a spolky</li>
+              <li>PWA — funguje na všech zařízeních</li>
+              <li>Vícejazyčná podpora (čeština, angličtina)</li>
+            </ul>
+            <div class="portfolio__card-stack">
+              <span>Web App</span>
+              <span>PWA</span>
+              <span>Real-time</span>
+              <span>Multi-tenant</span>
+            </div>
+            <a href="https://sejitse.cz" target="_blank" rel="noopener noreferrer" class="btn btn--primary portfolio__card-btn">
+              Navštívit sejitse.cz
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+          <div class="portfolio__card-visual">
+            <div class="portfolio__mockup">
+              <div class="portfolio__mockup-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="portfolio__mockup-content">
+                <div class="portfolio__mockup-header"></div>
+                <div class="portfolio__mockup-row">
+                  <div class="portfolio__mockup-block portfolio__mockup-block--w60"></div>
+                  <div class="portfolio__mockup-block portfolio__mockup-block--w30"></div>
+                </div>
+                <div class="portfolio__mockup-row">
+                  <div class="portfolio__mockup-block portfolio__mockup-block--card"></div>
+                  <div class="portfolio__mockup-block portfolio__mockup-block--card"></div>
+                  <div class="portfolio__mockup-block portfolio__mockup-block--card"></div>
+                </div>
+                <div class="portfolio__mockup-row">
+                  <div class="portfolio__mockup-block portfolio__mockup-block--w80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Kontakt</span>
+        <h2 class="section__title">Pojďme spolu <span class="gradient-text">něco vytvořit</span></h2>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <div class="contact__info-card">
+            <h3>DSh Solutions s.r.o.</h3>
+            <div class="contact__info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <p>Chudenická 1059/30</p>
+                <p>Hostivař, 102 00 Praha</p>
+                <p>Česká republika</p>
+              </div>
+            </div>
+            <div class="contact__info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              <a href="mailto:info@dsh-solutions.cz">info@dsh-solutions.cz</a>
+            </div>
+            <div class="contact__info-details">
+              <p><strong>IČO:</strong> 03508480</p>
+              <p><strong>DIČ:</strong> CZ03508480</p>
+              <p><strong>Zapsána:</strong> Městský soud v Praze, sp. zn. C 232920</p>
+              <p><strong>ID datové schránky:</strong> 5kvriii</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact__form-wrap reveal">
+          <form class="contact__form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">Jméno</label>
+              <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">E-mail</label>
+              <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+            </div>
+            <div class="form__group">
+              <label for="message" class="form__label">Zpráva</label>
+              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+            </div>
+            <div class="form__group form__group--consent">
+              <label class="form__checkbox">
+                <input type="checkbox" name="gdpr_consent" required>
+                <span class="form__checkmark"></span>
+                <span>Souhlasím se <a href="#privacy" class="link">zpracováním osobních údajů</a> za účelem odpovědi na můj dotaz.</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Odeslat zprávu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy -->
+  <section class="section" id="privacy">
+    <div class="container container--narrow">
+      <div class="section__header reveal">
+        <span class="section__label">Právní informace</span>
+        <h2 class="section__title">Ochrana <span class="gradient-text">osobních údajů</span></h2>
+      </div>
+      <div class="privacy__content reveal">
+        <h3>1. Správce osobních údajů</h3>
+        <p>DSh Solutions s.r.o., IČO: 03508480, se sídlem Chudenická 1059/30, Hostivař, 102 00 Praha, Česká republika (dále jen „správce").</p>
+        <p>Kontakt: <a href="mailto:info@dsh-solutions.cz" class="link">info@dsh-solutions.cz</a></p>
+
+        <h3>2. Rozsah zpracování osobních údajů</h3>
+        <p>Prostřednictvím kontaktního formuláře zpracováváme: jméno, e-mailovou adresu a obsah zprávy. Tyto údaje slouží výhradně k zodpovězení vašeho dotazu.</p>
+
+        <h3>3. Právní základ zpracování</h3>
+        <p>Osobní údaje zpracováváme na základě vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR), který udělujete zaškrtnutím příslušného pole v kontaktním formuláři.</p>
+
+        <h3>4. Doba uchovávání údajů</h3>
+        <p>Osobní údaje z kontaktního formuláře uchováváme po dobu nezbytnou k vyřízení vašeho dotazu, nejdéle však 1 rok od posledního kontaktu.</p>
+
+        <h3>5. Příjemci údajů</h3>
+        <p>Vaše údaje nepředáváme třetím stranám s výjimkou poskytovatele služby pro zpracování formuláře (Formspree, Inc., USA — na základě standardních smluvních doložek dle čl. 46 GDPR).</p>
+
+        <h3>6. Vaše práva</h3>
+        <p>Máte právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Svůj souhlas můžete kdykoliv odvolat zasláním e-mailu na <a href="mailto:info@dsh-solutions.cz" class="link">info@dsh-solutions.cz</a>.</p>
+
+        <h3>7. Právo podat stížnost</h3>
+        <p>Máte právo podat stížnost u Úřadu pro ochranu osobních údajů (ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" class="link">www.uoou.cz</a>.</p>
+
+        <h3>8. Cookies</h3>
+        <p>Tato webová stránka nepoužívá žádné cookies ani nástroje pro sledování. Vaše preference tmavého/světlého režimu jsou uloženy pouze lokálně ve vašem prohlížeči (localStorage) a nejsou odesílány na žádný server.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <a href="#hero" class="nav__logo">
+            <span class="nav__logo-icon">D</span>
+            <span class="nav__logo-text">Sh Solutions</span>
+          </a>
+          <p class="footer__copy">&copy; 2014–2026 DSh Solutions s.r.o. Všechna práva vyhrazena.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#about">O nás</a>
+          <a href="#services">Služby</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Kontakt</a>
+          <a href="#privacy">Ochrana údajů</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ============================================
-   DSh Solutions — JavaScript
+   DSH Solutions — JavaScript
    ============================================ */
 
 (function () {

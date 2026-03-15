@@ -129,4 +129,22 @@
       });
     });
   }
+
+  // --- Portfolio Gallery ---
+  var gallery = document.getElementById('portfolioGallery');
+  if (gallery) {
+    var thumbs = gallery.querySelectorAll('.portfolio__thumb');
+    var mainLight = gallery.querySelector('.portfolio__gallery-img--light');
+    var mainDark = gallery.querySelector('.portfolio__gallery-img--dark');
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        thumbs.forEach(function (t) { t.classList.remove('portfolio__thumb--active'); });
+        thumb.classList.add('portfolio__thumb--active');
+        mainLight.src = thumb.getAttribute('data-light');
+        mainLight.alt = thumb.getAttribute('data-alt');
+        mainDark.src = thumb.getAttribute('data-dark');
+        mainDark.alt = thumb.getAttribute('data-alt') + ' (tmavý režim)';
+      });
+    });
+  }
 })();

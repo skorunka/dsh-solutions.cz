@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>DSH Solutions — letáček A6 (přední + zadní strana)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Tisk: A6 na výšku, 2 strany. V dialogu tisku vypněte okraje a záhlaví/zápatí,
+     zapněte "Grafika na pozadí". Pro tiskárnu exportujte do PDF. */
+  @page { size: 105mm 148mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #444; font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; }
+  .page {
+    width: 105mm; height: 148mm; overflow: hidden; position: relative;
+    margin: 10mm auto; page-break-after: always;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  @media print { html, body { background: #fff; } .page { margin: 0; } }
+
+  /* ---------- přední strana ---------- */
+  .front { background: #0a0a0f; color: #fff; padding: 9mm 8mm 8mm; display: flex; flex-direction: column; }
+  .front::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 9mm 9mm;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 10%, transparent 75%);
+  }
+  .front::after {
+    content: ''; position: absolute; width: 70mm; height: 70mm; border-radius: 50%; top: -20mm; right: -25mm;
+    background: radial-gradient(circle, rgba(68,102,255,.45), transparent 70%); filter: blur(8mm);
+  }
+  .front > * { position: relative; z-index: 1; }
+  .logo { display: flex; align-items: center; gap: 2.5mm; }
+  .logo__icon { width: 11mm; height: 9mm; border-radius: 2.2mm; background: linear-gradient(135deg, #4466ff, #9944ff);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 8pt; letter-spacing: .3pt; }
+  .logo__text { font-weight: 700; font-size: 11pt; }
+  .logo__text small { display: block; font-weight: 500; font-size: 6.5pt; opacity: .6; letter-spacing: .5pt; text-transform: uppercase; }
+  .pill { display: inline-block; margin-top: 9mm; padding: 1.2mm 3.5mm; border: 1px solid rgba(255,255,255,.2); border-radius: 10mm;
+    font-size: 6.5pt; letter-spacing: .6pt; text-transform: uppercase; color: #b8b8c8; }
+  h1 { margin-top: 4mm; font-size: 23pt; line-height: 1.1; font-weight: 800; letter-spacing: -.5pt; }
+  h1 span { background: linear-gradient(135deg, #7a8cff, #c07aff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .sub { margin-top: 4mm; font-size: 8.5pt; line-height: 1.5; color: #b8b8c8; }
+  .front ul { list-style: none; margin-top: 5mm; display: grid; gap: 1.8mm; }
+  .front li { font-size: 8.5pt; font-weight: 600; display: flex; gap: 2mm; align-items: center; }
+  .front li::before { content: ''; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: linear-gradient(135deg, #4466ff, #9944ff); flex-shrink: 0; }
+  .front__bottom { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 4mm; }
+  .front__bottom p { font-size: 7.5pt; color: #b8b8c8; line-height: 1.45; }
+  .front__bottom strong { display: block; color: #fff; font-size: 10pt; font-weight: 800; margin-bottom: 1mm; }
+  .qr { width: 24mm; height: 24mm; padding: 1.5mm; background: #fff; border-radius: 2mm; flex-shrink: 0; }
+  .qr img { width: 100%; height: 100%; display: block; }
+
+  /* ---------- zadní strana ---------- */
+  .back { background: #fff; color: #1a1a2e; padding: 9mm 8mm 8mm; display: flex; flex-direction: column; }
+  .back h2 { font-size: 15pt; font-weight: 800; letter-spacing: -.3pt; line-height: 1.15; }
+  .back h2 span { color: #5566ff; }
+  .grid { margin-top: 5mm; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .cell { border: 1px solid #e4e4ee; border-radius: 2.5mm; padding: 3mm; }
+  .cell b { display: block; font-size: 8pt; font-weight: 700; margin-bottom: .8mm; }
+  .cell p { font-size: 6.8pt; line-height: 1.4; color: #555570; }
+  .cell i { font-style: normal; font-size: 11pt; display: block; margin-bottom: 1.2mm; }
+  .steps { margin-top: 5mm; display: flex; gap: 2mm; }
+  .step { flex: 1; font-size: 7pt; line-height: 1.35; color: #555570; }
+  .step b { display: flex; align-items: center; gap: 1.5mm; color: #1a1a2e; font-size: 7.5pt; margin-bottom: .8mm; }
+  .step b em { font-style: normal; width: 5mm; height: 5mm; border-radius: 50%; color: #fff; font-size: 6.5pt; display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #4466ff, #9944ff); }
+  .back__cta { margin-top: auto; background: linear-gradient(135deg, #4466ff, #9944ff); color: #fff; border-radius: 3mm; padding: 4mm 5mm;
+    display: flex; align-items: center; justify-content: space-between; gap: 3mm; }
+  .back__cta strong { display: block; font-size: 10pt; font-weight: 800; line-height: 1.2; }
+  .back__cta p { font-size: 7pt; opacity: .9; margin-top: 1mm; }
+  .back__cta .qr { width: 18mm; height: 18mm; padding: 1mm; }
+  .back__foot { margin-top: 3mm; font-size: 6.3pt; color: #8888a0; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- PŘEDNÍ STRANA -->
+<section class="page front">
+  <div class="logo">
+    <div class="logo__icon">DSH</div>
+    <div class="logo__text">DSH Solutions<small>AI development</small></div>
+  </div>
+  <span class="pill">Aplikace · Weby · AI na míru</span>
+  <h1>Z nápadu <span>hotová aplikace</span>. Rychleji, než čekáte.</h1>
+  <p class="sub">Senior vývojář s AI po ruce zvládne to, na co dřív byl potřeba celý tým. Bez agenturních cen, bez čekání.</p>
+  <ul>
+    <li>Aplikace přesně podle vaší firmy</li>
+    <li>Weby a e-shopy, které prodávají</li>
+    <li>AI chatboti a automatizace</li>
+    <li>Konzultace zdarma</li>
+  </ul>
+  <div class="front__bottom">
+    <p><strong>dsh-solutions.cz</strong>info@dsh-solutions.cz<br>Naskenujte a napište nám.</p>
+    <div class="qr"><img src="qr-dsh.svg" alt="QR kód: dsh-solutions.cz"></div>
+  </div>
+</section>
+
+<!-- ZADNÍ STRANA -->
+<section class="page back">
+  <h2>Cokoli, co dnes řešíte <span>v Excelu, WhatsAppu nebo na papíře</span>, umí být aplikace.</h2>
+  <div class="grid">
+    <div class="cell"><i>🎾</i><b>Klubovka</b><p>Sportovní klub v mobilu: zápasy, kurty, akce, útrata.</p></div>
+    <div class="cell"><i>🥖</i><b>Upečíno</b><p>Objednávky pro pekárnu. Nahradilo WhatsApp a Excel.</p></div>
+    <div class="cell"><i>🍇</i><b>Rakouská vína</b><p>Kompletní e-shop s administrací a QR platbou.</p></div>
+    <div class="cell"><i>🤖</i><b>AI ve firmě</b><p>Chatbot, asistent, automatické zpracování dokumentů.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><b><em>1</em>Zavoláme si</b>30 minut, zdarma. Řeknete, co potřebujete.</div>
+    <div class="step"><b><em>2</em>Návrh a cena</b>Do pár dnů, srozumitelně a bez háčků.</div>
+    <div class="step"><b><em>3</em>Stavíme</b>Výsledek vidíte průběžně. Platíte za to, co funguje.</div>
+  </div>
+  <div class="back__cta">
+    <div>
+      <strong>Máte nápad? Napište pár vět.</strong>
+      <p>Ozveme se do 24 hodin. dsh-solutions.cz</p>
+    </div>
+    <div class="qr"><img src="qr-dsh.svg" alt="QR kód: dsh-solutions.cz"></div>
+  </div>
+  <div class="back__foot"><span>DSH Solutions s.r.o. · Praha · od roku 2014</span><span>Partner tomboly maturitního plesu</span></div>
+</section>
+
+</body>
+</html>

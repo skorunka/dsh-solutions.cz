@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSH Solutions s.r.o. — Software Development & SaaS</title>
+  <title>DSH Solutions — AI development. Aplikace, weby a AI řešení na míru</title>
 
   <!-- SEO & Social -->
-  <meta name="description" content="DSH Solutions s.r.o. — Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
-  <meta name="keywords" content="software development, SaaS, web applications, Czech Republic, DSH Solutions">
+  <meta name="description" content="DSH Solutions — AI development z Prahy. Aplikace, weby, e-shopy a AI nástroje na míru. Senior vývojář s AI po ruce postaví to, na co dřív byl potřeba celý tým.">
+  <meta name="keywords" content="AI development, vývoj aplikací na míru, webové aplikace, AI automatizace, chatbot, Praha, DSH Solutions">
   <meta name="author" content="DSH Solutions s.r.o.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dsh-solutions.cz/">
@@ -15,8 +15,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dsh-solutions.cz/">
-  <meta property="og:title" content="DSH Solutions s.r.o. — Software Development & SaaS">
-  <meta property="og:description" content="Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
+  <meta property="og:title" content="DSH Solutions — AI development">
+  <meta property="og:description" content="Z nápadu hotová aplikace. Rychleji, než čekáte. Aplikace, weby a AI řešení na míru.">
   <meta property="og:image" content="https://dsh-solutions.cz/og-image.png">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:site_name" content="DSH Solutions s.r.o.">
@@ -29,8 +29,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DSH Solutions s.r.o. — Software Development & SaaS">
-  <meta name="twitter:description" content="Czech software development company specializing in SaaS products, web applications, and custom software solutions.">
+  <meta name="twitter:title" content="DSH Solutions — AI development">
+  <meta name="twitter:description" content="Z nápadu hotová aplikace. Rychleji, než čekáte. Aplikace, weby a AI řešení na míru.">
   <meta name="twitter:image" content="https://dsh-solutions.cz/og-image.png">
 
   <!-- Favicon -->
@@ -42,6 +42,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DSH Solutions s.r.o.",
+    "url": "https://dsh-solutions.cz/",
+    "logo": "https://dsh-solutions.cz/logo.svg",
+    "email": "info@dsh-solutions.cz",
+    "foundingDate": "2014",
+    "description": "AI development. Aplikace, weby a AI řešení na míru.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Chudenická 1059/30",
+      "addressLocality": "Praha",
+      "postalCode": "102 00",
+      "addressCountry": "CZ"
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -52,12 +72,13 @@
         <span class="nav__logo-text">Solutions</span>
       </a>
       <div class="nav__links" id="navLinks">
-        <a href="#about" class="nav__link">O nás</a>
-        <a href="#services" class="nav__link">Služby</a>
-        <a href="#portfolio" class="nav__link">Portfolio</a>
+        <a href="#about" class="nav__link">Proč DSH</a>
+        <a href="#services" class="nav__link">Co umíme</a>
+        <a href="#portfolio" class="nav__link">Projekty</a>
         <a href="#contact" class="nav__link">Kontakt</a>
       </div>
       <div class="nav__actions">
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta">Konzultace zdarma</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Přepnout tmavý/světlý režim">
           <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
@@ -89,18 +110,23 @@
       <div class="hero__glow hero__glow--2"></div>
     </div>
     <div class="hero__container">
-      <div class="hero__badge reveal">Software Development & SaaS</div>
+      <div class="hero__badge reveal"><span class="hero__badge-dot"></span>AI development &middot; Praha &middot; od roku 2014</div>
       <h1 class="hero__title reveal">
-        Tvoříme <span class="gradient-text">digitální řešení</span> pro moderní svět
+        Z nápadu <span class="gradient-text">hotová aplikace</span>. Rychleji, než čekáte.
       </h1>
       <p class="hero__subtitle reveal">
-        DSH Solutions je česká softwarová společnost zaměřená na vývoj webových aplikací,
-        SaaS produktů a zakázkového softwaru.
+        Weby, e-shopy, aplikace i firemní nástroje na míru. Senior vývojář s AI po ruce
+        zvládne to, na co dřív byl potřeba celý tým. Bez agenturních cen, bez čekání.
       </p>
       <div class="hero__cta reveal">
-        <a href="#contact" class="btn btn--primary">Kontaktujte nás</a>
-        <a href="#portfolio" class="btn btn--outline">Naše projekty</a>
+        <a href="#contact" class="btn btn--primary btn--lg">Nezávazná konzultace zdarma</a>
+        <a href="#portfolio" class="btn btn--outline btn--lg">Ukázky projektů</a>
       </div>
+      <ul class="hero__stats reveal">
+        <li><strong>12&nbsp;let</strong><span>na trhu</span></li>
+        <li><strong>5+</strong><span>produktů v&nbsp;provozu</span></li>
+        <li><strong>1&nbsp;kontakt</strong><span>na celý projekt</span></li>
+      </ul>
     </div>
     <div class="hero__scroll">
       <div class="hero__scroll-line"></div>
@@ -111,30 +137,31 @@
   <section class="section" id="about">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__label">O nás</span>
-        <h2 class="section__title">Spolehlivý partner pro váš <span class="gradient-text">digitální růst</span></h2>
+        <span class="section__label">Proč DSH</span>
+        <h2 class="section__title">Jeden člověk. <span class="gradient-text">Výkon celého týmu.</span></h2>
+        <p class="section__lead">AI změnila, kolik toho jeden zkušený vývojář zvládne. Využíváme to naplno, a vy to poznáte na ceně i rychlosti.</p>
       </div>
       <div class="about__grid">
         <div class="about__card reveal">
           <div class="about__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Od roku 2014</h3>
-          <p>Společnost DSH Solutions s.r.o. byla založena v roce 2014 a od té doby dodává kvalitní softwarová řešení pro české i zahraniční klienty.</p>
-        </div>
-        <div class="about__card reveal">
-          <div class="about__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>Moderní technologie</h3>
-          <p>Využíváme nejnovější technologie a osvědčené postupy pro tvorbu škálovatelných, bezpečných a výkonných aplikací.</p>
+          <h3>Od návrhu po nasazení</h3>
+          <p>Analýzu, návrh, vývoj, testy i provoz řeší jeden člověk s AI nástroji. Žádné předávání mezi odděleními, žádné ztracené informace.</p>
         </div>
         <div class="about__card reveal">
           <div class="about__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Individuální přístup</h3>
-          <p>Ke každému projektu přistupujeme individuálně. Nasloucháme vašim potřebám a navrhujeme řešení na míru.</p>
+          <h3>Mluvíme lidsky</h3>
+          <p>Nepotřebujete zadání na třicet stran. Stačí říct, co vás štve. Srozumitelný návrh řešení i cenu máte do pár dnů, ne za měsíc.</p>
+        </div>
+        <div class="about__card reveal">
+          <div class="about__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Ověřeno v provozu</h3>
+          <p>DSH Solutions staví software od roku 2014. Produkty níže dnes používají kluby, pekárna i e-shop, a to každý den.</p>
         </div>
       </div>
     </div>
@@ -144,41 +171,59 @@
   <section class="section section--alt" id="services">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__label">Služby</span>
-        <h2 class="section__title">Co pro vás <span class="gradient-text">můžeme udělat</span></h2>
+        <span class="section__label">Co umíme</span>
+        <h2 class="section__title">Cokoli, co dnes řešíte <span class="gradient-text">v Excelu nebo na papíře</span></h2>
       </div>
       <div class="services__grid">
         <div class="services__card reveal">
           <div class="services__number">01</div>
-          <h3>Webové aplikace</h3>
-          <p>Vývoj moderních webových aplikací s důrazem na uživatelský zážitek, výkon a bezpečnost.</p>
+          <h3>Aplikace na míru</h3>
+          <p>Objednávky, rezervace, evidence, interní systémy. Přesně podle toho, jak vaše firma funguje, ne jak to chce krabicový software.</p>
           <ul class="services__tags">
-            <li>React</li><li>Next.js</li><li>Node.js</li><li>TypeScript</li>
+            <li>Webová aplikace</li><li>PWA na mobil</li><li>Administrace</li>
           </ul>
         </div>
         <div class="services__card reveal">
           <div class="services__number">02</div>
-          <h3>SaaS produkty</h3>
-          <p>Návrh, vývoj a provoz SaaS řešení od prvotní myšlenky po plně funkční produkt s tisíci uživateli.</p>
+          <h3>Weby &amp; e-shopy</h3>
+          <p>Rychlé, moderní a připravené prodávat. Od jednostránkové vizitky po plnohodnotný obchod s platbami, fakturací a QR platbou.</p>
           <ul class="services__tags">
-            <li>Cloud</li><li>API</li><li>Škálovatelnost</li><li>CI/CD</li>
+            <li>Next.js</li><li>SEO</li><li>Platby</li><li>Fakturace</li>
           </ul>
         </div>
         <div class="services__card reveal">
           <div class="services__number">03</div>
-          <h3>Zakázkový software</h3>
-          <p>Tvorba softwarových řešení na míru — od interních nástrojů po komplexní podnikové systémy.</p>
+          <h3>AI ve vaší firmě</h3>
+          <p>Chatbot pro zákazníky, asistent pro zaměstnance, automatické zpracování dokumentů a e-mailů. AI, která vám vrátí hodiny týdně.</p>
           <ul class="services__tags">
-            <li>Backend</li><li>Frontend</li><li>Databáze</li><li>Integrace</li>
+            <li>LLM</li><li>Automatizace</li><li>Integrace</li>
           </ul>
         </div>
         <div class="services__card reveal">
           <div class="services__number">04</div>
-          <h3>Konzultace & podpora</h3>
-          <p>Technické konzultace, code review, architektonický návrh a dlouhodobá podpora vašich projektů.</p>
+          <h3>Konzultace &amp; záchrana projektů</h3>
+          <p>Zasekl se vám projekt? Nevíte, kde začít? Zhodnotíme stav, navrhneme cestu a pomůžeme to dotáhnout.</p>
           <ul class="services__tags">
-            <li>Architektura</li><li>DevOps</li><li>Bezpečnost</li><li>Optimalizace</li>
+            <li>Architektura</li><li>Code review</li><li>Rozjezd</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="process reveal">
+        <div class="process__step">
+          <span class="process__num">1</span>
+          <h4>Zavoláme si</h4>
+          <p>30 minut. Řeknete, co potřebujete. Zdarma a bez závazků.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__num">2</span>
+          <h4>Dostanete návrh</h4>
+          <p>Do pár dnů máte srozumitelný návrh řešení a cenu.</p>
+        </div>
+        <div class="process__step">
+          <span class="process__num">3</span>
+          <h4>Stavíme a ladíme</h4>
+          <p>Výsledek vidíte průběžně. Platíte za to, co funguje.</p>
         </div>
       </div>
     </div>
@@ -188,77 +233,151 @@
   <section class="section" id="portfolio">
     <div class="container">
       <div class="section__header reveal">
-        <span class="section__label">Portfolio</span>
-        <h2 class="section__title">Naše <span class="gradient-text">projekty</span></h2>
+        <span class="section__label">Projekty</span>
+        <h2 class="section__title">Věci, které <span class="gradient-text">skuteční lidé</span> používají každý den</h2>
+        <p class="section__lead">Žádné šablony ani demo. Vlastní produkty postavené od nuly, v provozu a s reálnými uživateli.</p>
       </div>
-      <div class="portfolio__showcase reveal">
-        <div class="portfolio__card portfolio__card--featured">
-          <div class="portfolio__card-glow"></div>
-          <div class="portfolio__card-content">
-            <div class="portfolio__card-header">
-              <span class="portfolio__card-badge">SaaS produkt</span>
-              <span class="portfolio__card-badge portfolio__card-badge--live">Live</span>
+
+      <div class="projects">
+
+        <article class="project reveal" style="--p-color: #b5701a; --p-color-2: #e0a040;">
+          <div class="project__cover">
+            <div class="project__bar"><span></span><span></span><span></span><em>klubovka.net</em></div>
+            <div class="project__art">
+              <span class="project__emoji">🎾</span>
+              <span class="project__wordmark">Klubovka</span>
+              <span class="project__claim">Zápasy · Kurty · Akce · Útrata</span>
             </div>
-            <h3 class="portfolio__card-title">Sejit se</h3>
-            <p class="portfolio__card-desc">
-              Platforma pro správu událostí a docházky. Umožňuje organizacím koordinovat skupinové aktivity,
-              spravovat účast členů, sledovat docházku a organizovat pravidelné i jednorázové události.
-            </p>
-            <ul class="portfolio__card-features">
-              <li>Tvorba a správa událostí (pravidelné i jednorázové)</li>
-              <li>RSVP systém s čekací listinou</li>
-              <li>Synchronizace kalendáře (iCal)</li>
-              <li>Správa organizací a rolí (admin, manažer, člen)</li>
-              <li>Analytika docházky a statistiky</li>
-              <li>Podpora pro sportovní kluby, komunity a spolky</li>
-              <li>PWA — funguje na všech zařízeních</li>
-              <li>Vícejazyčná podpora (čeština, angličtina)</li>
-            </ul>
-            <div class="portfolio__card-stack">
-              <span>Web App</span>
-              <span>PWA</span>
-              <span>Real-time</span>
-              <span>Multi-tenant</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="badge">Aplikace</span>
+              <span class="badge badge--live">V provozu</span>
             </div>
-            <a href="https://sejitse.cz" target="_blank" rel="noopener noreferrer" class="btn btn--primary portfolio__card-btn">
-              Navštívit sejitse.cz
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            <h3>Klubovka</h3>
+            <p class="project__tagline">Klubovna pro sportovní kluby v mobilu</p>
+            <p class="project__desc">Zápasy, rezervace kurtů, klubové akce a společná útrata po hře na jednom místě. Žebříčky, docházka, notifikace. Instaluje se jako aplikace, funguje i seniorům.</p>
+            <ul class="project__tags"><li>Next.js</li><li>PWA</li><li>Push notifikace</li><li>Postgres</li></ul>
+            <a href="https://klubovka.net" target="_blank" rel="noopener noreferrer" class="project__link">klubovka.net
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
           </div>
-          <div class="portfolio__card-visual">
-            <div class="portfolio__gallery" id="portfolioGallery">
-              <div class="portfolio__gallery-main">
-                <div class="portfolio__mockup">
-                  <div class="portfolio__mockup-bar">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="portfolio__mockup-content">
-                    <img class="portfolio__gallery-img portfolio__gallery-img--light" src="images/homepage.png" alt="Sejit se — úvodní stránka" loading="lazy">
-                    <img class="portfolio__gallery-img portfolio__gallery-img--dark" src="images/homepage.dk.png" alt="Sejit se — úvodní stránka (tmavý režim)" loading="lazy">
-                  </div>
-                </div>
-              </div>
-              <div class="portfolio__gallery-thumbs">
-                <button class="portfolio__thumb portfolio__thumb--active" data-light="images/homepage.png" data-dark="images/homepage.dk.png" data-alt="Sejit se — úvodní stránka" data-rotate="1">
-                  <img class="portfolio__thumb-light" src="images/homepage.png" alt="Úvodní stránka">
-                  <img class="portfolio__thumb-dark" src="images/homepage.dk.png" alt="Úvodní stránka">
-                </button>
-                <button class="portfolio__thumb" data-light="images/event-list.png" data-dark="images/event-list.dk.png" data-alt="Sejit se — seznam akcí" data-rotate="2">
-                  <img class="portfolio__thumb-light" src="images/event-list.png" alt="Seznam akcí">
-                  <img class="portfolio__thumb-dark" src="images/event-list.dk.png" alt="Seznam akcí">
-                </button>
-                <button class="portfolio__thumb" data-light="images/event-detail.png" data-dark="images/event-detail.dk.png" data-alt="Sejit se — detail akce" data-rotate="3">
-                  <img class="portfolio__thumb-light" src="images/event-detail.png" alt="Detail akce">
-                  <img class="portfolio__thumb-dark" src="images/event-detail.dk.png" alt="Detail akce">
-                </button>
-                <button class="portfolio__thumb" data-light="images/org-admin-dashboard.png" data-dark="images/org-admin-dashboard.dk.png" data-alt="Sejit se — administrace organizace" data-rotate="4">
-                  <img class="portfolio__thumb-light" src="images/org-admin-dashboard.png" alt="Administrace">
-                  <img class="portfolio__thumb-dark" src="images/org-admin-dashboard.dk.png" alt="Administrace">
-                </button>
-              </div>
+        </article>
+
+        <article class="project reveal" style="--p-color: #b8552b; --p-color-2: #e8945a;">
+          <div class="project__cover">
+            <div class="project__bar"><span></span><span></span><span></span><em>upecino.cz</em></div>
+            <div class="project__art">
+              <span class="project__emoji">🥖</span>
+              <span class="project__wordmark">Upečíno</span>
+              <span class="project__claim">Objednávky · Pec · Rozvoz · Faktury</span>
             </div>
           </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="badge">Aplikace</span>
+              <span class="badge badge--live">V provozu</span>
+            </div>
+            <h3>Upečíno</h3>
+            <p class="project__tagline">Objednávkový systém pro řemeslnou pekárnu</p>
+            <p class="project__desc">Nahradil WhatsApp, Excel a ruční převody. Zákazníci objednají pečivo na týden, pekařka vidí co péct, rozvozové trasy a měsíční vyúčtování s QR platbou.</p>
+            <ul class="project__tags"><li>Next.js</li><li>PWA</li><li>QR platba</li><li>E-maily</li></ul>
+            <a href="https://upecino.cz" target="_blank" rel="noopener noreferrer" class="project__link">upecino.cz
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project reveal" style="--p-color: #722f37; --p-color-2: #b8505e;">
+          <div class="project__cover">
+            <div class="project__bar"><span></span><span></span><span></span><em>vínoshop</em></div>
+            <div class="project__art">
+              <span class="project__emoji">🍷</span>
+              <span class="project__wordmark">Vínoshop</span>
+              <span class="project__claim">Společný nákup · Rozdělení · Platby</span>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="badge">Aplikace</span>
+              <span class="badge badge--private">Uzavřená komunita</span>
+            </div>
+            <h3>Vínoshop</h3>
+            <p class="project__tagline">Skupinové objednávky vína z Rakouska</p>
+            <p class="project__desc">Členové si vyberou z katalogu, aplikace sečte objednávky do jednoho hromadného nákupu, pohlídá rozdělení a kdo co zaplatil. V korunách i eurech.</p>
+            <ul class="project__tags"><li>Next.js</li><li>Postgres</li><li>CSV exporty</li></ul>
+            <span class="project__link project__link--muted">Interní aplikace</span>
+          </div>
+        </article>
+
+        <article class="project reveal" style="--p-color: #8b8178; --p-color-2: #c6aa89;">
+          <div class="project__cover">
+            <div class="project__bar"><span></span><span></span><span></span><em>rakouskavina.cz</em></div>
+            <div class="project__art">
+              <span class="project__emoji">🍇</span>
+              <span class="project__wordmark">Rakouská vína</span>
+              <span class="project__claim">Katalog · Košík · Objednávky · Admin</span>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="badge">E-shop</span>
+            </div>
+            <h3>Rakouská vína</h3>
+            <p class="project__tagline">E-shop s víny z Wachau</p>
+            <p class="project__desc">Kompletní obchod od katalogu po administraci objednávek. Platba převodem i dobírkou, hlídání skladu, ověření věku podle českého práva.</p>
+            <ul class="project__tags"><li>Next.js</li><li>E-shop</li><li>Storybook</li></ul>
+            <a href="https://rakouskavina.cz" target="_blank" rel="noopener noreferrer" class="project__link">rakouskavina.cz
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project reveal" style="--p-color: #1f5f6b; --p-color-2: #3fa0a8;">
+          <div class="project__cover">
+            <div class="project__bar"><span></span><span></span><span></span><em>letify.us</em></div>
+            <div class="project__art">
+              <span class="project__emoji">🏡</span>
+              <span class="project__wordmark">Letify</span>
+              <span class="project__claim">CZ / EN · Poptávky · Interní CRM</span>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="badge">Web</span>
+            </div>
+            <h3>Letify</h3>
+            <p class="project__tagline">Prémiové pronájmy nemovitostí od A do Z</p>
+            <p class="project__desc">Dvojjazyčný prezentační web se sběrem poptávek od majitelů nemovitostí a interní správou leadů pro tým.</p>
+            <ul class="project__tags"><li>Next.js</li><li>Vícejazyčnost</li><li>Leady</li></ul>
+            <a href="https://letify.us" target="_blank" rel="noopener noreferrer" class="project__link">letify.us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project project--cta reveal">
+          <div class="project__body">
+            <span class="project__emoji project__emoji--big">💡</span>
+            <h3>Tady může být váš projekt</h3>
+            <p class="project__desc">Máte nápad, proces, který vás zdržuje, nebo tabulku, ze které by měla být aplikace? Pojďme to probrat.</p>
+            <a href="#contact" class="btn btn--primary">Napsat DSH</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner reveal">
+        <div>
+          <h2>Máte nápad, ale nevíte, jak ho rozjet?</h2>
+          <p>Napište pár vět. Ozveme se do 24 hodin a řekneme vám, jestli to dává smysl, jak dlouho to bude trvat a kolik to bude stát.</p>
         </div>
+        <a href="#contact" class="btn btn--primary btn--lg">Chci konzultaci zdarma</a>
       </div>
     </div>
   </section>
@@ -268,7 +387,7 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__label">Kontakt</span>
-        <h2 class="section__title">Pojďme spolu <span class="gradient-text">něco vytvořit</span></h2>
+        <h2 class="section__title">Pojďme spolu <span class="gradient-text">něco postavit</span></h2>
       </div>
       <div class="contact__grid">
         <div class="contact__info reveal">
@@ -305,8 +424,8 @@
               <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
             </div>
             <div class="form__group">
-              <label for="message" class="form__label">Zpráva</label>
-              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+              <label for="message" class="form__label">Co potřebujete vyřešit?</label>
+              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required placeholder="Stačí pár vět. Třeba: „Objednávky řešíme přes WhatsApp a Excel a už to nezvládáme.“"></textarea>
             </div>
             <div class="form__group form__group--consent">
               <label class="form__checkbox">
@@ -315,7 +434,7 @@
                 <span>Souhlasím se <a href="#privacy" class="link">zpracováním osobních údajů</a> za účelem odpovědi na můj dotaz.</span>
               </label>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">Odeslat zprávu</button>
+            <button type="submit" class="btn btn--primary btn--full">Odeslat a domluvit konzultaci</button>
           </form>
         </div>
       </div>
@@ -367,12 +486,13 @@
             <span class="nav__logo-icon">DSH</span>
             <span class="nav__logo-text">Solutions</span>
           </a>
+          <p class="footer__tagline">AI development. Z nápadu hotová aplikace.</p>
           <p class="footer__copy">&copy; 2014–2026 DSH Solutions s.r.o. Všechna práva vyhrazena.</p>
         </div>
         <div class="footer__links">
-          <a href="#about">O nás</a>
-          <a href="#services">Služby</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#about">Proč DSH</a>
+          <a href="#services">Co umíme</a>
+          <a href="#portfolio">Projekty</a>
           <a href="#contact">Kontakt</a>
           <a href="#privacy">Ochrana údajů</a>
         </div>

@@ -23,8 +23,10 @@ měření tepu, živý překlad, výdrž 32 h. Kupte nový kus v originální kr
 ne zánovní ani použitý.
 
 Jak z toho udělat reklamu:
-- Zabalit do bílé krabice s kulatou nálepkou DSH, uvnitř letáček a kartička
-  s textem: **„Sluchátka jsou vaše. Vaši rodiče můžou vyhrát aplikaci. dsh-solutions.cz“**
+- Cenu balí Anežka. Předejte jí sluchátka spolu s pár nálepkami, letáčkem
+  a kartičkou — zbytek zařídí. Bílá krabice, kulatá nálepka DSH navrch,
+  uvnitř letáček a kartička s textem:
+  **„Sluchátka jsou vaše. Vaši rodiče můžou vyhrát aplikaci. dsh-solutions.cz“**
 - Pořadatelům nahlásit cenu jako **„Apple AirPods Pro 3 v hodnotě 6 000 Kč“**,
   ať ji zařadí mezi hlavní ceny a zazní z pódia.
 

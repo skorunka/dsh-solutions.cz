@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DSH na maturitním plese</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Podklady k tombole: co si stáhnout, co nabízíme a co z toho si můžete vybrat.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #fcfbf9;
+    --surface: #ffffff;
+    --surface-2: #f4f2ee;
+    --ink: #1b1d29;
+    --ink-soft: #565567;
+    --line: #e2ded6;
+    --gold: #9a6f27;
+    --gold-soft: #f4ecdb;
+    --dsh: #4a56e8;
+    --dsh-soft: #ecedfe;
+    --shadow: 0 1px 2px rgba(27, 29, 41, .06), 0 8px 24px rgba(27, 29, 41, .05);
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #14151d;
+      --surface: #1c1e28;
+      --surface-2: #232532;
+      --ink: #ecebf2;
+      --ink-soft: #a5a3b4;
+      --line: #32343f;
+      --gold: #d8a955;
+      --gold-soft: #2b2518;
+      --dsh: #8d96ff;
+      --dsh-soft: #21243a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #14151d;
+    --surface: #1c1e28;
+    --surface-2: #232532;
+    --ink: #ecebf2;
+    --ink-soft: #a5a3b4;
+    --line: #32343f;
+    --gold: #d8a955;
+    --gold-soft: #2b2518;
+    --dsh: #8d96ff;
+    --dsh-soft: #21243a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 44px 76px;
+  }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2rem, 5.5vw, 2.9rem); line-height: 1.12; letter-spacing: -0.015em; }
+  h2 { font-size: clamp(1.35rem, 3.5vw, 1.65rem); line-height: 1.25; }
+  h3 { font-size: 1.05rem; font-family: var(--sans); font-weight: 700; }
+  p { margin: 0; }
+  a { color: var(--dsh); }
+  :focus-visible { outline: 2px solid var(--dsh); outline-offset: 2px; }
+
+  .eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero { display: flex; flex-direction: column; gap: 14px; }
+  .hero .lede { font-size: 1.08rem; color: var(--ink-soft); max-width: 60ch; }
+  .prize {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+    padding: 18px 20px;
+    background: var(--gold-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .prize b { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+  .prize .amount { color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .prize span { color: var(--ink-soft); font-size: .92rem; }
+
+  section { margin-top: 56px; }
+  .sec-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .sec-head p { color: var(--ink-soft); font-size: .95rem; max-width: 62ch; }
+
+  .asks { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); overflow: hidden; }
+  .ask { display: flex; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+  .ask:last-child { border-bottom: none; }
+  .ask input { margin: 3px 0 0; width: 17px; height: 17px; accent-color: var(--dsh); flex-shrink: 0; cursor: pointer; }
+  .ask label { cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
+  .ask strong { font-weight: 700; font-size: .96rem; }
+  .ask span { font-size: .87rem; color: var(--ink-soft); }
+  .ask input:checked ~ label strong { color: var(--ink-soft); text-decoration: line-through; }
+  .group-label { display: flex; align-items: center; gap: 10px; margin: 26px 0 12px; }
+  .group-label span { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .group-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .note { margin-top: 14px; font-size: .87rem; color: var(--ink-soft); }
+
+  .files { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .file { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; box-shadow: var(--shadow); }
+  .file figure { margin: 0; background: var(--surface-2); padding: 16px; display: flex; gap: 10px; justify-content: center; align-items: center; min-height: 272px; }
+  .file figure img { height: auto; max-height: 240px; width: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 2px; display: block; }
+  .file.two figure img { width: calc(50% - 5px); }
+  .file.wide figure { min-height: 0; }
+  .file.wide figure img { max-height: none; width: 100%; }
+  .file .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .file p { font-size: .88rem; color: var(--ink-soft); }
+  .file .dl { margin-top: auto; padding-top: 14px; }
+  .wide { grid-column: 1 / -1; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 4px;
+    background: var(--dsh); color: #fff;
+    font-family: var(--sans); font-size: .88rem; font-weight: 700;
+    text-decoration: none; border: none; cursor: pointer;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn svg { width: 15px; height: 15px; }
+  .btn--quiet { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .meta { font-size: .78rem; color: var(--ink-soft); letter-spacing: .02em; }
+
+  .quote { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .quote + .quote { margin-top: 16px; }
+  .quote .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+  .quote .txt { font-family: var(--serif); font-size: 1.02rem; line-height: 1.65; white-space: pre-wrap; }
+
+  .qs { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .q { background: var(--surface-2); border-radius: 4px; padding: 12px 14px; font-size: .92rem; display: flex; gap: 9px; }
+  .q b { color: var(--gold); font-variant-numeric: tabular-nums; }
+
+  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--line); font-size: .85rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 6px; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Pro Anežku a spolužáky</p>
+    <h1>DSH na maturitním plese</h1>
+    <p class="lede">Dáváme vám cenu do tomboly. Na téhle stránce najdete, co za to nabízíme jako protihodnotu, a soubory, které k tomu potřebujete. Vyberte si z toho, co vám dává smysl a co zvládnete, nemusí to být všechno.</p>
+    <div class="prize">
+      <b>Apple AirPods Pro 3</b>
+      <span class="amount">hodnota 6 000 Kč</span>
+      <span>věnuje DSH Solutions &middot; AI development &middot; dsh-solutions.cz</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Vyberte si</p>
+      <h2>Co by nám udělalo radost</h2>
+      <p>Není to seznam podmínek. Vyberte, co je pro vás reálné, a dejte nám vědět, s čím počítat. I jedna zmínka z pódia je fajn.</p>
+    </div>
+
+    <div class="group-label"><span>Nejvíc by pomohlo</span></div>
+    <div class="asks" id="asks-core"></div>
+
+    <div class="group-label"><span>Kdyby zbyl prostor</span></div>
+    <div class="asks" id="asks-bonus"></div>
+
+    <p class="note">Odškrtávání je jen pro tebe, ostatní ho nevidí. Slouží jako poznámka, co už je domluvené.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Ke stažení</p>
+      <h2>Soubory, které k tomu patří</h2>
+      <p>Slide je to hlavní, pošlete ho tomu, kdo má na starosti projekci. Letáčky a nálepky vytiskneme my a přineseme hotové s cenou.</p>
+    </div>
+
+    <div class="files">
+
+      <article class="file wide">
+        <figure>
+          <img src="preview/slide.webp" alt="Slide na projektor: logo DSH Solutions, heslo Z nápadu hotová aplikace a QR kód na web" loading="lazy">
+        </figure>
+        <div class="body">
+          <h3>Slide na projektor</h3>
+          <p>Do smyčky sponzorů. Ideálně se objeví víckrát během večera, ne jen jednou na začátku.</p>
+          <p class="meta">PNG &middot; 1920 × 1080 px &middot; 300 kB</p>
+          <div class="dl">
+            <a class="btn" href="../promo/slide-1920x1080.png" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+              Stáhnout slide
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="file two">
+        <figure>
+          <img src="preview/letak-front.webp" alt="Přední strana letáčku: tmavé pozadí a nadpis Z nápadu hotová aplikace" loading="lazy">
+          <img src="preview/letak-back.webp" alt="Zadní strana letáčku: ukázky projektů, tři kroky spolupráce a QR kód" loading="lazy">
+        </figure>
+        <div class="body">
+          <h3>Letáček A6</h3>
+          <p>Vytiskneme jich asi deset. Stačí je dát na jedno místo, kde se lidi stejně zdržují, třeba k tombole nebo na bar.</p>
+          <p class="meta">PDF &middot; 105 × 148 mm &middot; 237 kB</p>
+          <div class="dl">
+            <a class="btn" href="../promo/letak-a6.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+              Stáhnout letáček
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="file">
+        <figure>
+          <img src="preview/nalepky.webp" alt="Arch kulatých nálepek s logem DSH a QR kódem" loading="lazy">
+        </figure>
+        <div class="body">
+          <h3>Nálepky 50 mm</h3>
+          <p>Jedna přijde na krabici s cenou, zbytek si může kdokoli vzít k letáčkům.</p>
+          <p class="meta">PDF &middot; arch A4, 20 kusů &middot; 290 kB</p>
+          <div class="dl">
+            <a class="btn" href="../promo/nalepky-a4.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+              Stáhnout nálepky
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Texty</p>
+      <h2>Hotové texty k použití</h2>
+      <p>Zkopírujte a pošlete dál. Moderátorovi dejte oba jeho texty, ať si vybere podle toho, kolik bude mít času.</p>
+    </div>
+
+    <div class="quote">
+      <div class="top">
+        <h3>Zpráva pro pořadatele</h3>
+        <button class="btn btn--quiet" type="button" data-copy="msg-organisers">Kopírovat</button>
+      </div>
+      <div class="txt" id="msg-organisers">Dobrý den, do tomboly dáváme Apple AirPods Pro 3 v hodnotě 6 000 Kč za firmu DSH Solutions (AI development, dsh-solutions.cz).
+
+Posílám slide 1920 × 1080 do projekce sponzorů a text pro moderátora ve dvou délkách. Cenu přineseme zabalenou, stačí říct kdy a komu.
+
+Kdyby to šlo, ocenili bychom ještě zmínku v programu nebo na facebookové události plesu a místo pro pár letáčků. A jestli někdo vyfotí předání ceny výherci, budeme rádi.
+
+Díky moc!</div>
+    </div>
+
+    <div class="quote">
+      <div class="top">
+        <h3>Pro moderátora &middot; při losování</h3>
+        <button class="btn btn--quiet" type="button" data-copy="msg-short">Kopírovat</button>
+      </div>
+      <div class="txt" id="msg-short">Cenu číslo … věnuje firma DSH Solutions, AI development z Prahy. Z nápadu udělají hotovou aplikaci rychleji, než čekáte. Weby, e-shopy, aplikace i chatboti na míru. dsh-solutions.cz. A výherce si odnáší Apple AirPods Pro 3!</div>
+    </div>
+
+    <div class="quote">
+      <div class="top">
+        <h3>Pro moderátora &middot; delší vstup</h3>
+        <button class="btn btn--quiet" type="button" data-copy="msg-long">Kopírovat</button>
+      </div>
+      <div class="txt" id="msg-long">Jedním z partnerů dnešní tomboly je pražská firma DSH Solutions. Zabývají se tím, čemu se dnes říká AI development. Znamená to jednoduchou věc: přijdete s nápadem nebo s problémem, třeba že objednávky řešíte přes WhatsApp a Excel, a oni z toho postaví hotovou aplikaci. S pomocí umělé inteligence to zvládne jeden zkušený vývojář za zlomek času i ceny, kterou by si dřív řekla celá agentura.
+
+Staví aplikace pro sportovní kluby, objednávkové systémy pro pekárny, e-shopy i chatboty. Pokud máte firmu, nápad nebo tabulku, ze které by měla být aplikace, najdete je na dsh-solutions.cz. První konzultace je zdarma.
+
+A do tomboly věnovali Apple AirPods Pro 3. Držte si losy!</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">Zpátky k nám</p>
+      <h2>Co potřebujeme vědět</h2>
+      <p>Hlavně první dva body, bez nich se cena nestihne předat včas.</p>
+    </div>
+    <div class="qs">
+      <div class="q"><b>1</b><span>Datum a místo plesu</span></div>
+      <div class="q"><b>2</b><span>Kdy a komu cenu předat</span></div>
+      <div class="q"><b>3</b><span>Kontakt na člověka, co řeší sponzory</span></div>
+      <div class="q"><b>4</b><span>V jakém formátu chtějí slide</span></div>
+      <div class="q"><b>5</b><span>Do kdy dodat podklady do programu</span></div>
+      <div class="q"><b>6</b><span>Co z nabídky jste vybrali</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Kdyby se kdokoli na cokoli ptal: <a href="mailto:info@dsh-solutions.cz">info@dsh-solutions.cz</a> &middot; <a href="https://dsh-solutions.cz">dsh-solutions.cz</a></p>
+    <p>QR kód na materiálech vede na web, takže pak půjde poznat, kolik lidí si nás našlo díky plesu.</p>
+  </footer>
+
+</div>
+
+<script>
+  var CORE = [
+    ['Zmínka z pódia při losování naší ceny', 'Stačí přečíst text, co je níž na stránce. Tohle je pro nás nejdůležitější.'],
+    ['Slide v projekci sponzorů', 'Obrázek máte ke stažení, hodí se ho pustit víckrát za večer.'],
+    ['Delší vstup moderátora během večera', 'Ideálně když jsou všichni v sále, třeba před půlnočním překvapením.'],
+    ['Místo pro pár letáčků', 'Jeden stolek u tomboly, baru nebo šatny, víc netřeba.']
+  ];
+  var BONUS = [
+    ['Zmínka v tištěném programu', 'Jen název firmy a web dsh-solutions.cz.'],
+    ['Zmínka na facebookové události plesu', 'S odkazem na web, klidně i s označením firmy.'],
+    ['Roll-up u vstupu nebo vedle pódia', 'Necháme ho vyrobit, jen musíme vědět, jestli je kam ho postavit.'],
+    ['Fotka z předání ceny výherci', 'Použijeme ji na web a sociální sítě.']
+  ];
+
+  function render(id, items, prefix) {
+    var box = document.getElementById(id);
+    box.innerHTML = items.map(function (it, i) {
+      var key = prefix + i;
+      return '<div class="ask">' +
+        '<input type="checkbox" id="' + key + '">' +
+        '<label for="' + key + '"><strong>' + it[0] + '</strong><span>' + it[1] + '</span></label>' +
+        '</div>';
+    }).join('');
+  }
+  render('asks-core', CORE, 'core-');
+  render('asks-bonus', BONUS, 'bonus-');
+
+  var STORE = 'dsh-ples-checklist';
+  function load() {
+    try { return JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) { return {}; }
+  }
+  function save(state) {
+    try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* private window */ }
+  }
+  var state = load();
+  document.querySelectorAll('.ask input').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener('change', function () {
+      state[box.id] = box.checked;
+      save(state);
+    });
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = document.getElementById(btn.getAttribute('data-copy')).innerText;
+      var done = function () {
+        var old = btn.textContent;
+        btn.textContent = 'Zkopírováno';
+        setTimeout(function () { btn.textContent = old; }, 1800);
+      };
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { btn.textContent = 'Označ a zkopíruj ručně'; }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+  });
+</script>
+</body>
+</html>

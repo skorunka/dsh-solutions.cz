@@ -124,7 +124,7 @@
       </div>
       <ul class="hero__stats reveal">
         <li><strong>1&nbsp;rok</strong><span>vývoje s&nbsp;AI</span></li>
-        <li><strong>5+</strong><span>produktů v&nbsp;provozu</span></li>
+        <li><strong>5+</strong><span>hotových produktů</span></li>
         <li><strong>1&nbsp;kontakt</strong><span>na celý projekt</span></li>
       </ul>
     </div>
@@ -161,7 +161,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <h3>Ověřeno v provozu</h3>
-          <p>DSH Solutions staví software od roku 2014. Produkty níže dnes používají kluby, pekárna i e-shop, a to každý den.</p>
+          <p>DSH Solutions staví software od roku 2014. Klubovka běží v ostrém provozu každý den, další produkty níže jsou těsně před spuštěním.</p>
         </div>
       </div>
     </div>
@@ -234,25 +234,30 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__label">Projekty</span>
-        <h2 class="section__title">Věci, které <span class="gradient-text">skuteční lidé</span> používají každý den</h2>
-        <p class="section__lead">Žádné šablony ani demo. Vlastní produkty postavené od nuly, v provozu a s reálnými uživateli.</p>
+        <h2 class="section__title">Věci postavené <span class="gradient-text">pro skutečné lidi</span>, ne pro portfolio</h2>
+        <p class="section__lead">Žádné šablony ani demo. Vlastní produkty postavené od nuly pro konkrétní zákazníky. Klikněte na náhled a projděte si je.</p>
       </div>
 
       <div class="projects">
 
         <article class="project reveal" style="--p-color: #b5701a; --p-color-2: #e0a040;">
-          <div class="project__cover">
+          <button class="project__cover" type="button" aria-label="Otevřít galerii: Klubovka">
             <div class="project__bar"><span></span><span></span><span></span><em>klubovka.net</em></div>
-            <div class="project__art">
-              <span class="project__emoji">🎾</span>
-              <span class="project__wordmark">Klubovka</span>
-              <span class="project__claim">Zápasy · Kurty · Akce · Útrata</span>
+            <div class="project__shot project__shot--phone">
+              <img src="images/klubovka/01-home.png" alt="Klubovka: Domovská obrazovka" loading="lazy">
             </div>
-          </div>
+            <span class="project__count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>5 snímků</span>
+          </button>
+          <ul class="project__gallery" hidden>
+              <li data-src="images/klubovka/01-home.png">Domovská obrazovka</li>
+              <li data-src="images/klubovka/02-matches.png">Zápasy a kurty</li>
+              <li data-src="images/klubovka/03-events.png">Klubové akce</li>
+              <li data-src="images/klubovka/04-leaderboard.png">Žebříček</li>
+              <li data-src="images/klubovka/05-admin.png">Administrace klubu</li>
+          </ul>
           <div class="project__body">
             <div class="project__meta">
-              <span class="badge">Aplikace</span>
-              <span class="badge badge--live">V provozu</span>
+              <span class="badge">Aplikace</span><span class="badge badge--live">V provozu</span>
             </div>
             <h3>Klubovka</h3>
             <p class="project__tagline">Klubovna pro sportovní kluby v mobilu</p>
@@ -263,44 +268,52 @@
             </a>
           </div>
         </article>
-
         <article class="project reveal" style="--p-color: #b8552b; --p-color-2: #e8945a;">
-          <div class="project__cover">
+          <button class="project__cover" type="button" aria-label="Otevřít galerii: Upečíno">
             <div class="project__bar"><span></span><span></span><span></span><em>upecino.cz</em></div>
-            <div class="project__art">
-              <span class="project__emoji">🥖</span>
-              <span class="project__wordmark">Upečíno</span>
-              <span class="project__claim">Objednávky · Pec · Rozvoz · Faktury</span>
+            <div class="project__shot project__shot--desktop">
+              <img src="images/upecino/01-menu.png" alt="Upečíno: Týdenní nabídka a košík" loading="lazy">
             </div>
-          </div>
+            <span class="project__count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>6 snímků</span>
+          </button>
+          <ul class="project__gallery" hidden>
+              <li data-src="images/upecino/01-menu.png">Týdenní nabídka a košík</li>
+              <li data-src="images/upecino/02-account.png">Účet zákazníka</li>
+              <li data-src="images/upecino/03-admin-orders.png">Objednávky podle dnů pečení</li>
+              <li data-src="images/upecino/04-bake-plan.png">Co péct</li>
+              <li data-src="images/upecino/05-invoice.png">Vyúčtování s QR platbou</li>
+              <li data-src="images/upecino/06-mobile-menu.png">Nabídka v mobilu</li>
+          </ul>
           <div class="project__body">
             <div class="project__meta">
-              <span class="badge">Aplikace</span>
-              <span class="badge badge--live">V provozu</span>
+              <span class="badge">Aplikace</span><span class="badge badge--soon">Připravuje se</span>
             </div>
             <h3>Upečíno</h3>
             <p class="project__tagline">Objednávkový systém pro řemeslnou pekárnu</p>
-            <p class="project__desc">Nahradil WhatsApp, Excel a ruční převody. Zákazníci objednají pečivo na týden, pekařka vidí co péct, rozvozové trasy a měsíční vyúčtování s QR platbou.</p>
+            <p class="project__desc">Nahrazuje WhatsApp, Excel a ruční převody. Zákazníci objednají pečivo na týden, pekařka vidí co péct, rozvozové trasy a měsíční vyúčtování s QR platbou.</p>
             <ul class="project__tags"><li>Next.js</li><li>PWA</li><li>QR platba</li><li>E-maily</li></ul>
-            <a href="https://upecino.cz" target="_blank" rel="noopener noreferrer" class="project__link">upecino.cz
+            <a href="https://upecino-cz.vercel.app/" target="_blank" rel="noopener noreferrer" class="project__link">Ukázka: upecino-cz.vercel.app
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
           </div>
         </article>
-
         <article class="project reveal" style="--p-color: #722f37; --p-color-2: #b8505e;">
-          <div class="project__cover">
+          <button class="project__cover" type="button" aria-label="Otevřít galerii: Vínoshop">
             <div class="project__bar"><span></span><span></span><span></span><em>vínoshop</em></div>
-            <div class="project__art">
-              <span class="project__emoji">🍷</span>
-              <span class="project__wordmark">Vínoshop</span>
-              <span class="project__claim">Společný nákup · Rozdělení · Platby</span>
+            <div class="project__shot project__shot--desktop">
+              <img src="images/vinoshop/01-order.png" alt="Vínoshop: Objednávka z katalogu" loading="lazy">
             </div>
-          </div>
+            <span class="project__count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>4 snímků</span>
+          </button>
+          <ul class="project__gallery" hidden>
+              <li data-src="images/vinoshop/01-order.png">Objednávka z katalogu</li>
+              <li data-src="images/vinoshop/02-admin-batch.png">Souhrn hromadného nákupu</li>
+              <li data-src="images/vinoshop/03-admin-list.png">Správa nákupů</li>
+              <li data-src="images/vinoshop/04-mobile-order.png">Objednávka v mobilu</li>
+          </ul>
           <div class="project__body">
             <div class="project__meta">
-              <span class="badge">Aplikace</span>
-              <span class="badge badge--private">Uzavřená komunita</span>
+              <span class="badge">Aplikace</span><span class="badge badge--private">Uzavřená komunita</span>
             </div>
             <h3>Vínoshop</h3>
             <p class="project__tagline">Skupinové objednávky vína z Rakouska</p>
@@ -309,50 +322,56 @@
             <span class="project__link project__link--muted">Interní aplikace</span>
           </div>
         </article>
-
         <article class="project reveal" style="--p-color: #8b8178; --p-color-2: #c6aa89;">
-          <div class="project__cover">
+          <button class="project__cover" type="button" aria-label="Otevřít galerii: Rakouská vína">
             <div class="project__bar"><span></span><span></span><span></span><em>rakouskavina.cz</em></div>
-            <div class="project__art">
-              <span class="project__emoji">🍇</span>
-              <span class="project__wordmark">Rakouská vína</span>
-              <span class="project__claim">Katalog · Košík · Objednávky · Admin</span>
+            <div class="project__shot project__shot--desktop">
+              <img src="images/rakouskavina/01-home.png" alt="Rakouská vína: Nabídka vín" loading="lazy">
             </div>
-          </div>
+            <span class="project__count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>5 snímků</span>
+          </button>
+          <ul class="project__gallery" hidden>
+              <li data-src="images/rakouskavina/01-home.png">Nabídka vín</li>
+              <li data-src="images/rakouskavina/02-product.png">Detail vína</li>
+              <li data-src="images/rakouskavina/03-cart.png">Košík a objednávka</li>
+              <li data-src="images/rakouskavina/04-admin.png">Administrace objednávek</li>
+              <li data-src="images/rakouskavina/05-mobile-shop.png">E-shop v mobilu</li>
+          </ul>
           <div class="project__body">
             <div class="project__meta">
-              <span class="badge">E-shop</span>
+              <span class="badge">E-shop</span><span class="badge badge--soon">Připravuje se</span>
             </div>
             <h3>Rakouská vína</h3>
             <p class="project__tagline">E-shop s víny z Wachau</p>
             <p class="project__desc">Kompletní obchod od katalogu po administraci objednávek. Platba převodem i dobírkou, hlídání skladu, ověření věku podle českého práva.</p>
             <ul class="project__tags"><li>Next.js</li><li>E-shop</li><li>Storybook</li></ul>
-            <a href="https://rakouskavina.cz" target="_blank" rel="noopener noreferrer" class="project__link">rakouskavina.cz
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
+            <span class="project__link project__link--muted">Před spuštěním</span>
           </div>
         </article>
-
         <article class="project reveal" style="--p-color: #1f5f6b; --p-color-2: #3fa0a8;">
-          <div class="project__cover">
+          <button class="project__cover" type="button" aria-label="Otevřít galerii: Letify">
             <div class="project__bar"><span></span><span></span><span></span><em>letify.us</em></div>
-            <div class="project__art">
-              <span class="project__emoji">🏡</span>
-              <span class="project__wordmark">Letify</span>
-              <span class="project__claim">CZ / EN · Poptávky · Interní CRM</span>
+            <div class="project__shot project__shot--desktop">
+              <img src="images/letify/01-home.png" alt="Letify: Úvodní stránka" loading="lazy">
             </div>
-          </div>
+            <span class="project__count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>5 snímků</span>
+          </button>
+          <ul class="project__gallery" hidden>
+              <li data-src="images/letify/01-home.png">Úvodní stránka</li>
+              <li data-src="images/letify/02-owners.png">Pro majitele nemovitostí</li>
+              <li data-src="images/letify/03-home-en.png">Anglická verze</li>
+              <li data-src="images/letify/04-admin-leads.png">Interní seznam poptávek</li>
+              <li data-src="images/letify/05-mobile-home.png">Web v mobilu</li>
+          </ul>
           <div class="project__body">
             <div class="project__meta">
-              <span class="badge">Web</span>
+              <span class="badge">Web</span><span class="badge badge--soon">Připravuje se</span>
             </div>
             <h3>Letify</h3>
             <p class="project__tagline">Prémiové pronájmy nemovitostí od A do Z</p>
             <p class="project__desc">Dvojjazyčný prezentační web se sběrem poptávek od majitelů nemovitostí a interní správou leadů pro tým.</p>
             <ul class="project__tags"><li>Next.js</li><li>Vícejazyčnost</li><li>Leady</li></ul>
-            <a href="https://letify.us" target="_blank" rel="noopener noreferrer" class="project__link">letify.us
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
+            <span class="project__link project__link--muted">Před spuštěním</span>
           </div>
         </article>
 
@@ -499,6 +518,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie projektu">
+    <div class="lightbox__head">
+      <div class="lightbox__title"></div>
+      <button class="lightbox__close" type="button" aria-label="Zavřít galerii">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="lightbox__stage">
+      <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Předchozí snímek">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" src="" alt="">
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Další snímek">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="lightbox__thumbs"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>

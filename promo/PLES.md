@@ -8,7 +8,7 @@ se dá vytisknout nebo poslat pořadatelům tak, jak je.
 | Soubor | K čemu | Jak použít |
 |---|---|---|
 | `letak-a6.html` / `letak-a6.pdf` | Letáček A6, přední + zadní strana | Tisk na matný papír 250–300 g. 100–150 ks na stoly a k tombole. |
-| `nalepky.html` / `nalepky-a4.pdf` | Arch 20 kulatých nálepek 50 mm, 2 motivy | Tiskárna nálepek (např. online tisk), 5–10 archů. Na cenu do tomboly, na letáčky, rozdat u stolu. |
+| `nalepky.html` / `nalepky-a4.pdf` | Arch 20 kulatých nálepek Ø45 mm, 2 motivy | Doma na laserovce na samolepicí arch A4 (typ papíru „Štítky“, měřítko 100 %), nebo online tisk. Na cenu do tomboly a na letáčky. |
 | `slide.html` / `slide-1920x1080.png` | Slide na projektor 16:9 | Poslat pořadatelům do smyčky sponzorů. |
 | `qr-dsh.svg` / `qr-dsh.png` / `qr-dsh-white.svg` | QR kód na web s UTM (`utm_source=ples`) | Stejný QR na všem, ať jde měřit, kolik lidí přišlo z plesu. |
 

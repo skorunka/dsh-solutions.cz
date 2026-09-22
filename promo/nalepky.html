@@ -2,38 +2,44 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>DSH Solutions — nálepky (kulaté 50 mm, arch A4)</title>
+<title>DSH Solutions — nálepky (kulaté 45 mm, arch A4)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Arch A4 s 20 kulatými nálepkami 50 mm (4 × 5). Tiskněte bez okrajů, měřítko 100 %.
-     Pro tiskárnu nálepek pošlete PDF; řezná linka = obvod kruhu. Dva motivy se střídají. */
+  /* Arch A4 s 20 kulatými nálepkami Ø45 mm (4 × 5).
+     Mřížka má 189 × 237 mm a je vycentrovaná, takže od kraje papíru zbývá
+     10,5 mm vodorovně a 30 mm svisle — vejde se do tiskové plochy každé
+     laserové tiskárny (netisknutelný okraj bývá ~5 mm).
+     Tiskněte v měřítku 100 % / "skutečná velikost", NIKOLI "přizpůsobit stránce".
+     Tenký šedý kroužek kolem každé nálepky je řezná linka. */
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #666; font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; }
-  .sheet { width: 210mm; height: 297mm; background: #fff; margin: 10mm auto; padding: 16mm 5mm;
-    display: grid; grid-template-columns: repeat(4, 50mm); grid-auto-rows: 50mm; gap: 3mm; justify-content: center;
+  .sheet { width: 210mm; height: 297mm; background: #fff; margin: 10mm auto;
+    display: grid; grid-template-columns: repeat(4, 45mm); grid-auto-rows: 45mm; gap: 3mm;
+    align-content: center; justify-content: center;
     -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   @media print { body { background: #fff; } .sheet { margin: 0; } }
-  .s { width: 50mm; height: 50mm; border-radius: 50%; overflow: hidden; position: relative;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
+  .s { width: 45mm; height: 45mm; border-radius: 50%; overflow: hidden; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff;
+    box-shadow: 0 0 0 .3mm #d0d0d8; }
 
   /* Motiv A: logo + slogan */
   .a { background: #0a0a0f; }
   .a::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 25%, rgba(68,102,255,.55), transparent 55%), radial-gradient(circle at 75% 80%, rgba(153,68,255,.5), transparent 55%); }
   .a > * { position: relative; }
-  .a .icon { width: 13mm; height: 10.5mm; border-radius: 2.5mm; background: linear-gradient(135deg, #4466ff, #9944ff); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 9.5pt; letter-spacing: .3pt; }
-  .a b { display: block; margin-top: 2.2mm; font-size: 8pt; font-weight: 800; line-height: 1.15; }
+  .a .icon { width: 11.7mm; height: 9.5mm; border-radius: 2.2mm; background: linear-gradient(135deg, #4466ff, #9944ff); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 8.5pt; letter-spacing: .3pt; }
+  .a b { display: block; margin-top: 2mm; font-size: 7.2pt; font-weight: 800; line-height: 1.15; }
   .a b span { background: linear-gradient(135deg, #8a9aff, #c88aff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .a small { display: block; margin-top: 1.8mm; font-size: 5.5pt; letter-spacing: .5pt; text-transform: uppercase; color: #b8b8c8; }
-  .a em { display: block; margin-top: 1mm; font-style: normal; font-size: 6.2pt; font-weight: 700; }
+  .a small { display: block; margin-top: 1.6mm; font-size: 5pt; letter-spacing: .5pt; text-transform: uppercase; color: #b8b8c8; }
+  .a em { display: block; margin-top: .9mm; font-style: normal; font-size: 5.6pt; font-weight: 700; }
 
   /* Motiv B: QR + url */
   .b { background: linear-gradient(135deg, #4466ff, #9944ff); }
-  .b .qr { width: 22mm; height: 22mm; background: #fff; border-radius: 2mm; padding: 1.2mm; }
+  .b .qr { width: 20mm; height: 20mm; background: #fff; border-radius: 2mm; padding: 1.1mm; }
   .b .qr img { width: 100%; height: 100%; display: block; }
-  .b b { display: block; margin-top: 1.8mm; font-size: 7.2pt; font-weight: 800; }
-  .b small { display: block; font-size: 5.3pt; letter-spacing: .4pt; text-transform: uppercase; opacity: .9; margin-top: .6mm; }
+  .b b { display: block; margin-top: 1.6mm; font-size: 6.5pt; font-weight: 800; }
+  .b small { display: block; font-size: 4.8pt; letter-spacing: .4pt; text-transform: uppercase; opacity: .9; margin-top: .6mm; }
 </style>
 </head>
 <body>

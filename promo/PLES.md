@@ -59,7 +59,7 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 > Staví aplikace pro sportovní kluby, objednávkové systémy pro pekárny,
 > e-shopy i chatboty. Pokud máte firmu, nápad nebo tabulku, ze které by měla
 > být aplikace, najdete je na **dsh-solutions.cz**. Na stolech máte letáčky
-> s QR kódem. První konzultace je zdarma.
+> s QR kódem.
 >
 > A do tomboly věnovali Apple AirPods Pro 3. Držte si losy!
 

@@ -8,12 +8,14 @@ se dá vytisknout nebo poslat pořadatelům tak, jak je.
 | Soubor | K čemu | Jak použít |
 |---|---|---|
 | `letak-a6.html` / `letak-a6.pdf` | Letáček A6, přední + zadní strana | Tisk na matný papír 250–300 g. 100–150 ks na stoly a k tombole. |
-| `nalepky.html` / `nalepky-a4.pdf` | Arch 20 kulatých nálepek Ø45 mm, 2 motivy | Doma na laserovce na samolepicí arch A4 (typ papíru „Štítky“, měřítko 100 %), nebo online tisk. Na cenu do tomboly a na letáčky. |
 | `slide.html` / `slide-1920x1080.png` | Slide na projektor 16:9 | Poslat pořadatelům do smyčky sponzorů. |
 | `qr-dsh.svg` / `qr-dsh.png` / `qr-dsh-white.svg` | QR kód na web s UTM (`utm_source=ples`) | Stejný QR na všem, ať jde měřit, kolik lidí přišlo z plesu. |
 
-Letáček a nálepky se otevřou v prohlížeči a tisknou přes Ctrl+P
-(vypnout okraje, zapnout grafiku na pozadí). PDF je připravené rovnou pro tiskárnu.
+Letáček se otevře v prohlížeči a tiskne přes Ctrl+P (vypnout okraje, zapnout
+grafiku na pozadí). PDF je připravené rovnou pro tiskárnu.
+
+Nálepky jsme zrušili. Podklad zůstává ve složce (`nalepky.html`, `nalepky-a4.pdf`),
+kdyby se k nim někdy vrátilo, ale do plánu na ples nepatří.
 
 ## Cena do tomboly: Apple AirPods Pro 3
 
@@ -23,9 +25,8 @@ měření tepu, živý překlad, výdrž 32 h. Kupte nový kus v originální kr
 ne zánovní ani použitý.
 
 Jak z toho udělat reklamu:
-- Cenu balí Anežka. Předejte jí sluchátka spolu s pár nálepkami, letáčkem
-  a kartičkou — zbytek zařídí. Bílá krabice, kulatá nálepka DSH navrch,
-  uvnitř letáček a kartička s textem:
+- Cenu balí Anežka. Předejte jí sluchátka spolu s letáčkem a kartičkou —
+  zbytek zařídí. Bílá krabice, uvnitř letáček a kartička s textem:
   **„Sluchátka jsou vaše. Vaši rodiče můžou vyhrát aplikaci. dsh-solutions.cz“**
 - Pořadatelům nahlásit cenu jako **„Apple AirPods Pro 3 v hodnotě 6 000 Kč“**,
   ať ji zařadí mezi hlavní ceny a zazní z pódia.

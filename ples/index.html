@@ -137,7 +137,7 @@
   .file .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .file p { font-size: .88rem; color: var(--ink-soft); }
   .file .dl { margin-top: auto; padding-top: 14px; }
-  .wide { grid-column: 1 / -1; }
+  .wide, .file.two { grid-column: 1 / -1; }
 
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -156,9 +156,6 @@
   .quote .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
   .quote .txt { font-family: var(--serif); font-size: 1.02rem; line-height: 1.65; white-space: pre-wrap; }
 
-  .qs { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .q { background: var(--surface-2); border-radius: 4px; padding: 12px 14px; font-size: .92rem; display: flex; gap: 9px; }
-  .q b { color: var(--gold); font-variant-numeric: tabular-nums; }
 
   footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--line); font-size: .85rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 6px; }
 
@@ -200,7 +197,7 @@
     <div class="sec-head">
       <p class="eyebrow">Ke stažení</p>
       <h2>Soubory, které k tomu patří</h2>
-      <p>Slide je to hlavní, pošlete ho tomu, kdo má na starosti projekci. Letáčky a nálepky vytiskneme my a Anežka je dostane i s cenou.</p>
+      <p>Slide je to hlavní, pošlete ho tomu, kdo má na starosti projekci. Letáčky vytiskneme my a Anežka je dostane i s cenou.</p>
     </div>
 
     <div class="files">
@@ -240,24 +237,6 @@
         </div>
       </article>
 
-      <article class="file">
-        <figure>
-          <img src="preview/nalepky.webp" alt="Arch kulatých nálepek s logem DSH a QR kódem" loading="lazy">
-        </figure>
-        <div class="body">
-          <h3>Nálepky 45 mm</h3>
-          <p>Jednu nalepte na krabici s cenou, až ji budete balit. Zbytek si může kdokoli vzít k letáčkům.</p>
-          <p class="meta">PDF &middot; arch A4, 20 kusů &middot; 450 kB</p>
-          <p class="meta">Tisk doma: samolepicí arch A4 pro laserové tiskárny, typ papíru &bdquo;Štítky&ldquo;, měřítko 100 %. Šedý kroužek kolem nálepky je řezná linka.</p>
-          <div class="dl">
-            <a class="btn" href="../promo/nalepky-a4.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
-              Stáhnout nálepky
-            </a>
-          </div>
-        </div>
-      </article>
-
     </div>
   </section>
 
@@ -287,7 +266,7 @@ Díky moc!</div>
         <h3>Pro moderátora &middot; při losování</h3>
         <button class="btn btn--quiet" type="button" data-copy="msg-short">Kopírovat</button>
       </div>
-      <div class="txt" id="msg-short">Cenu číslo … věnuje firma DSH Solutions, AI development z Prahy. Z nápadu udělají hotovou aplikaci rychleji, než čekáte. Weby, e-shopy, aplikace i chatboti na míru. dsh-solutions.cz. A výherce si odnáší Apple AirPods Pro 3!</div>
+      <div class="txt" id="msg-short">Tuhle cenu věnuje DSH Solutions — firma, která vám z nápadu načmáraného na ubrousku udělá hotovou aplikaci. Takže jestli doma máte nápad, co roky leží v šuplíku: dsh-solutions.cz. A teď to hlavní — výherce si odnáší Apple AirPods Pro 3!</div>
     </div>
 
     <div class="quote">
@@ -295,27 +274,13 @@ Díky moc!</div>
         <h3>Pro moderátora &middot; delší vstup</h3>
         <button class="btn btn--quiet" type="button" data-copy="msg-long">Kopírovat</button>
       </div>
-      <div class="txt" id="msg-long">Jedním z partnerů dnešní tomboly je pražská firma DSH Solutions. Zabývají se tím, čemu se dnes říká AI development. Znamená to jednoduchou věc: přijdete s nápadem nebo s problémem, třeba že objednávky řešíte přes WhatsApp a Excel, a oni z toho postaví hotovou aplikaci. S pomocí umělé inteligence to zvládne jeden zkušený vývojář za zlomek času i ceny, kterou by si dřív řekla celá agentura.
+      <div class="txt" id="msg-long">Jedním z partnerů dnešní tomboly je pražská firma DSH Solutions. Živí se tím, čemu se dnes říká AI development. Zní to děsivě, ale znamená to jednoduchou věc: přijdete s tím, že objednávky řešíte přes WhatsApp, papírek a vlastní paměť — a oni z toho udělají aplikaci, která to dělá za vás.
 
-Staví aplikace pro sportovní kluby, objednávkové systémy pro pekárny, e-shopy i chatboty. Pokud máte firmu, nápad nebo tabulku, ze které by měla být aplikace, najdete je na dsh-solutions.cz.
+Postavili appku pro sportovní klub, objednávkový systém pro pekárnu, e-shop s vínem. Pokaždé jeden člověk a umělá inteligence, za zlomek času i peněz, které by si řekla celá agentura.
 
-A do tomboly věnovali Apple AirPods Pro 3. Držte si losy!</div>
-    </div>
-  </section>
+Takže jestli je tady někdo, kdo má firmu a v ní tabulku, ze které měla být dávno aplikace — dsh-solutions.cz. Na letáčcích je QR kód, hodí vás tam dřív, než dohraje tahle písnička.
 
-  <section>
-    <div class="sec-head">
-      <p class="eyebrow">Zpátky k nám</p>
-      <h2>Co potřebujeme vědět</h2>
-      <p>Hlavně první dva body, bez nich se cena nestihne předat včas.</p>
-    </div>
-    <div class="qs">
-      <div class="q"><b>1</b><span>Datum a místo plesu</span></div>
-      <div class="q"><b>2</b><span>Do kdy má být cena na místě</span></div>
-      <div class="q"><b>3</b><span>Kontakt na člověka, co řeší sponzory</span></div>
-      <div class="q"><b>4</b><span>V jakém formátu chtějí slide</span></div>
-      <div class="q"><b>5</b><span>Do kdy dodat podklady do programu</span></div>
-      <div class="q"><b>6</b><span>Co z nabídky jste vybrali</span></div>
+A do tomboly dali Apple AirPods Pro 3. Držte si losy!</div>
     </div>
   </section>
 

@@ -43,31 +43,32 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 
 ### Krátká (při losování, cca 15 s)
 
-> Cenu číslo … věnuje firma **DSH Solutions**, AI development z Prahy.
-> Z nápadu udělají hotovou aplikaci rychleji, než čekáte. Weby, e-shopy,
-> aplikace i chatboti na míru. **dsh-solutions.cz**. A výherce si odnáší
-> Apple AirPods Pro 3!
+> Tuhle cenu věnuje **DSH Solutions** — firma, která vám z nápadu
+> načmáraného na ubrousku udělá hotovou aplikaci. Takže jestli doma máte
+> nápad, co roky leží v šuplíku: **dsh-solutions.cz**. A teď to hlavní —
+> výherce si odnáší Apple AirPods Pro 3!
 
 ### Delší (moderátorský vstup, cca 40 s)
 
-> Jedním z partnerů dnešní tomboly je pražská firma **DSH Solutions**.
-> Zabývají se tím, čemu se dnes říká AI development. Znamená to jednoduchou věc:
-> přijdete s nápadem nebo s problémem, třeba že objednávky řešíte přes
-> WhatsApp a Excel, a oni z toho postaví hotovou aplikaci. S pomocí umělé
-> inteligence to zvládne jeden zkušený vývojář za zlomek času i ceny, kterou by
-> si dřív řekla celá agentura.
+> Jedním z partnerů dnešní tomboly je firma **DSH Solutions**. Živí se tím,
+> čemu se dnes říká AI development. Zní to děsivě, ale znamená to jednoduchou
+> věc: přijdete s tím, že objednávky řešíte přes WhatsApp, papírek a vlastní
+> paměť — a oni z toho udělají aplikaci, která to dělá za vás.
 >
-> Staví aplikace pro sportovní kluby, objednávkové systémy pro pekárny,
-> e-shopy i chatboty. Pokud máte firmu, nápad nebo tabulku, ze které by měla
-> být aplikace, najdete je na **dsh-solutions.cz**. Na stolech máte letáčky
-> s QR kódem.
+> Postavili appku pro sportovní klub, objednávkový systém pro pekárnu,
+> e-shop s vínem. Pokaždé jeden člověk a umělá inteligence, za zlomek času
+> i peněz, které by si řekla celá agentura.
 >
-> A do tomboly věnovali Apple AirPods Pro 3. Držte si losy!
+> Takže jestli je tady někdo, kdo má firmu a v ní tabulku, ze které měla být
+> dávno aplikace — **dsh-solutions.cz**. Na letáčcích je QR kód, hodí vás tam
+> dřív, než dohraje tahle písnička.
+>
+> A do tomboly dali Apple AirPods Pro 3. Držte si losy!
 
 ### Jednou větou (kdyby byl čas jen na jednu)
 
-> DSH Solutions, AI development z Prahy: z nápadu hotová aplikace, rychleji,
-> než čekáte. dsh-solutions.cz.
+> DSH Solutions: nápad máte vy, hotovou aplikaci zařídí oni.
+> dsh-solutions.cz.
 
 ## Co ještě zvážit
 

@@ -15,30 +15,23 @@ se dá vytisknout nebo poslat pořadatelům tak, jak je.
 Letáček a nálepky se otevřou v prohlížeči a tisknou přes Ctrl+P
 (vypnout okraje, zapnout grafiku na pozadí). PDF je připravené rovnou pro tiskárnu.
 
-## Cena do tomboly (5 000 Kč s DPH, jedna věc)
+## Cena do tomboly: Apple AirPods Pro 3
 
-**Doporučení: Apple AirPods 4 s aktivním potlačením hluku (cca 4 500–4 990 Kč),
-zabalené v „DSH boxu“.**
+**Rozhodnuto: Apple AirPods Pro 3** (Alza 5 990 Kč, s kódem `ALZAPLUSVIP5` 5 691 Kč,
+skladem). Nejsilnější tahák v sále: slovo „Pro“ funguje, ANC nové generace,
+měření tepu, živý překlad, výdrž 32 h. Kupte nový kus v originální krabici,
+ne zánovní ani použitý.
 
-Proč zrovna tohle:
-- Na plese jsou maturanti i jejich rodiče. Sluchátka chce každý, cena se nemusí
-  vysvětlovat a moderátor ji ohlásí s nadšením. Apple = moderní technologie, což
-  sedí k AI developmentu.
-- Balení udělá reklamu: bílá krabice s nálepkou DSH, uvnitř letáček a kartička
+Jak z toho udělat reklamu:
+- Zabalit do bílé krabice s kulatou nálepkou DSH, uvnitř letáček a kartička
   s textem: **„Sluchátka jsou vaše. Vaši rodiče můžou vyhrát aplikaci. dsh-solutions.cz“**
-- Hodnota je hmatatelná, takže se cena dostane mezi hlavní ceny a zazní z pódia.
-
-Náhradní varianty ve stejné ceně, kdyby AirPods nebyly k mání:
-- JBL Charge 6 nebo Flip 7 (reproduktor, 3 500–4 500 Kč) plus zbytek do 5 000 Kč
-  jako roční předplatné ChatGPT Plus / Claude Pro formou dárkové kartičky.
-- Kindle Paperwhite (cca 4 500 Kč).
+- Pořadatelům nahlásit cenu jako **„Apple AirPods Pro 3 v hodnotě 6 000 Kč“**,
+  ať ji zařadí mezi hlavní ceny a zazní z pódia.
 
 **Bonus, který nestojí nic navíc (pokud to pořadatelé dovolí):** k fyzické ceně
 přiložit voucher **„Web nebo aplikace na míru v hodnotě 5 000 Kč od DSH Solutions,
 přenosný, platnost 12 měsíců“**. Když ho výherce nevyužije, nestojí nic. Když
 využije, je z toho referenční projekt a spokojený zákazník, který o vás mluví.
-Voucher samotný jako hlavní cena nedoporučuji, na plese vyhrávají věci, které
-se dají odnést.
 
 ## Text pro moderátora
 
@@ -50,7 +43,7 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 > Cenu číslo … věnuje firma **DSH Solutions**, AI development z Prahy.
 > Z nápadu udělají hotovou aplikaci rychleji, než čekáte. Weby, e-shopy,
 > aplikace i chatboti na míru. **dsh-solutions.cz**. A výherce si odnáší
-> sluchátka AirPods!
+> Apple AirPods Pro 3!
 
 ### Delší (moderátorský vstup, cca 40 s)
 
@@ -66,7 +59,7 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 > být aplikace, najdete je na **dsh-solutions.cz**. Na stolech máte letáčky
 > s QR kódem. První konzultace je zdarma.
 >
-> A do tomboly věnovali sluchátka Apple AirPods. Držte si losy!
+> A do tomboly věnovali Apple AirPods Pro 3. Držte si losy!
 
 ### Jednou větou (kdyby byl čas jen na jednu)
 

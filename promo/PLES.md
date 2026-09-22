@@ -1,5 +1,7 @@
 # DSH Solutions na maturitním plese
 
+**Ples: čtvrtek 5. listopadu 2026.**
+
 Balíček pro propagaci DSH Solutions jako partnera tomboly. Vše v této složce
 se dá vytisknout nebo poslat pořadatelům tak, jak je.
 

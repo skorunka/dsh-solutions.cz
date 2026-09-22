@@ -80,6 +80,9 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 - **Vizitky**: mít u sebe 30 ks pro rodiče, kteří přijdou pokecat.
 - **Web před plesem**: zkontrolovat, že formulář na webu funguje a že odpovíte
   do 24 hodin, jak slibujete.
-- **Po plese**: web záměrně nemá cookies ani analytiku. Pokud chcete měřit,
-  kolik lidí přišlo z QR kódu, nasaďte před plesem analytiku bez cookies
-  (např. Plausible). Jinak se výsledek pozná podle poptávek z formuláře.
+- **Po plese**: QR kód vede na `dsh-solutions.cz/?utm_source=ples&utm_medium=print`
+  a formulář tuhle značku posílá dál v poli `zdroj`. U každé poptávky z plesu
+  tedy v e-mailu uvidíte `zdroj: ples / print`. Nepočítá to návštěvy, jen
+  poptávky — web nemá cookies ani analytiku. Kdybyste chtěli i čísla návštěv,
+  musela by se nasadit analytika bez cookies (GoatCounter je zdarma,
+  Plausible kolem 9 USD měsíčně).

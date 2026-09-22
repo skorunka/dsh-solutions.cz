@@ -102,6 +102,24 @@
   // --- Contact Form (basic client-side validation + UX) ---
   var form = document.getElementById('contactForm');
   if (form) {
+    // Odkud návštěvník přišel. Značku nese QR kód na tištěných materiálech
+    // (?utm_source=ples), hodnota se připojí k e-mailu z formuláře.
+    // Čte se jen z adresy aktuální stránky, nic se neukládá do prohlížeče.
+    var origin = form.querySelector('[name="zdroj"]');
+    if (origin && window.URLSearchParams) {
+      var q = new URLSearchParams(window.location.search);
+      var tags = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (key) {
+        return q.get(key);
+      }).filter(Boolean);
+      if (tags.length) {
+        origin.value = tags.join(' / ');
+      } else if (document.referrer) {
+        try { origin.value = new URL(document.referrer).hostname; } catch (err) { /* ignore */ }
+      } else {
+        origin.value = 'přímo';
+      }
+    }
+
     form.addEventListener('submit', function (e) {
       var email = form.querySelector('#email');
       var consent = form.querySelector('[name="gdpr_consent"]');

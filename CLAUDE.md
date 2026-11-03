@@ -21,3 +21,6 @@ vlastní doména je v `CNAME`.
   Text má téct přes celou šířku kontejneru.
 - Obrázky do galerie: WebP, desktop max 1440 px na šířku, mobilní snímky max 900 px.
 - Stránka `ples/` se nesmí odkazovat z landing page a musí mít `noindex, nofollow`.
+- **Verze stylů a skriptů:** `index.html` načítá `style.css?v=…` a `script.js?v=…`.
+  Při každé změně `style.css` nebo `script.js` zvyš `?v=` (např. `2026-11-03.3`),
+  jinak telefony až 10 minut drží starou verzi z cache GitHub Pages.

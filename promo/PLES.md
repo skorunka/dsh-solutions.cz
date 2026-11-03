@@ -53,7 +53,7 @@ Jak z toho udělat reklamu:
 - Cenu balí Anežka. Předejte jí sluchátka spolu s letáčkem a kartičkou —
   zbytek zařídí. Bílá krabice, uvnitř letáček a kartička.
 - **Kartička** (`karticka.html` / `karticka-a4.pdf`): 85 × 55 mm, oboustranně,
-  4 kusy na A4 (jeden + rezerva). Vpředu „Gratulujeme! Sluchátka jsou vaše.",
+  jedna uprostřed archu A4. Vpředu „Gratulujeme! Sluchátka jsou vaše.",
   vzadu „Hudbu máte vyřešenou." s krátkým textem, kontaktem a QR kódem.
   Tiskne se na stejný papír jako letáky, oboustranně podél dlouhé strany;
   přední strana má spadávku 2 mm a značky řezu, řeže se podle nich.

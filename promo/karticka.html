@@ -6,11 +6,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Kartička 85 × 55 mm k AirPods do tomboly. Arch A4, 4 kusy (jeden + rezerva),
+  /* Kartička 85 × 55 mm k AirPods do tomboly. Arch A4, jedna kartička uprostřed,
      strana 1 přední, strana 2 zadní. Oboustranně s otáčením podél dlouhé strany.
      Přední strana má 2 mm spadávku přes ořez a značky řezu; řeže se z přední strany.
-     Karty jsou rozmístěné souměrně kolem středu archu, takže zadní strana po otočení
-     sedí za přední. Zadní strana je bílá s obsahem 5 mm od kraje: posun duplexu
+     Kartička je přesně uprostřed archu, takže zadní strana po otočení sedí za
+     přední. Zadní strana je bílá s obsahem 5 mm od kraje: posun duplexu
      o 1–2 mm na ní není vidět. */
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,12 +20,9 @@
   .sheet:last-child { page-break-after: auto; }
   @media print { html, body { background: #fff; } .sheet { margin: 0; } }
 
-  /* Rozmístění: 2 × 2, karta 85 × 55, mezera 10 mm, vycentrováno. */
+  /* Jedna karta 85 × 55 mm přesně uprostřed archu. */
   .card { position: absolute; width: 85mm; height: 55mm; }
-  .c1 { left: 15mm;  top: 88.5mm; }
-  .c2 { left: 110mm; top: 88.5mm; }
-  .c3 { left: 15mm;  top: 153.5mm; }
-  .c4 { left: 110mm; top: 153.5mm; }
+  .c1 { left: 62.5mm; top: 121mm; }
 
   /* ---------- přední strana ---------- */
   .front .card::before { /* tmavé pozadí se spadávkou 2 mm */
@@ -89,7 +86,7 @@
   [['sheetFront', 'front'], ['sheetBack', 'back']].forEach(function (pair) {
     var sheet = document.getElementById(pair[0]);
     var tpl = document.getElementById(pair[1]);
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= 1; i++) {
       var card = document.createElement('div');
       card.className = 'card c' + i;
       card.appendChild(tpl.content.cloneNode(true));
@@ -99,7 +96,7 @@
 
   // Značky řezu na přední straně: u každého rohu každé karty, mimo spadávku.
   var front = document.getElementById('sheetFront');
-  var cards = [[15, 88.5], [110, 88.5], [15, 153.5], [110, 153.5]];
+  var cards = [[62.5, 121]];
   var W = 85, H = 55, OFF = 3, LEN = 3, T = 0.15;
   function mark(x, y, w, h) {
     var m = document.createElement('i');

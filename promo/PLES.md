@@ -81,8 +81,9 @@ během večera (např. před půlnočním překvapením, kdy je největší pozo
 - **Web před plesem**: zkontrolovat, že formulář na webu funguje a že odpovíte
   do 24 hodin, jak slibujete.
 - **Po plese**: QR kód vede na `dsh-solutions.cz/?utm_source=ples&utm_medium=print`
-  a formulář tuhle značku posílá dál v poli `zdroj`. U každé poptávky z plesu
-  tedy v e-mailu uvidíte `zdroj: ples / print`. Nepočítá to návštěvy, jen
+  a formulář tuhle značku posílá dál v poli `zdroj`. Poptávky z plesu mají
+  v předmětu e-mailu `[ples]` a v těle `zdroj: ples / print`, takže je
+  v poště najdete hledáním „[ples]". Nepočítá to návštěvy, jen
   poptávky — web nemá cookies ani analytiku. Kdybyste chtěli i čísla návštěv,
   musela by se nasadit analytika bez cookies (GoatCounter je zdarma,
   Plausible kolem 9 USD měsíčně).

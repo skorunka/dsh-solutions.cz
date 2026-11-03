@@ -123,21 +123,16 @@
 
 <!-- Domácí tisk: letak-a6.html#a4 poskládá 4 letáky na arch A4 (1. strana přední,
      2. strana zadní). A6 je přesně čtvrtina A4 a tiskárna kolem dokola ~5 mm
-     nepotiskne, takže leták přes celou čtvrtinu by měl bílé pruhy. Proto je každý
-     leták zmenšený na 86 % (90 × 127 mm) a řeže se po okraji tmavé plochy:
-     rohy jsou rovné, tmavé pozadí přesahuje 2 mm přes linku řezu (spadávka)
-     a značky řezu jsou ve středovém kříži mezi letáky, kde je tiskárna vytiskne.
-     Zadní strana je bílá s obsahem odsazeným od kraje, posun duplexu na ní
-     není vidět. -->
+     nepotiskne, takže tmavá přední strana by měla bílé pruhy. Proto je každý leták
+     zmenšený na 88 % s bílým rámečkem, do kterého okraj tiskárny i nepřesnost
+     řezu a oboustranného tisku zapadnou. Řezy: přesně napůl a znovu napůl. -->
 <style id="a4-styles" media="not all">
   @page { size: A4; margin: 0; }
   .sheet { width: 210mm; height: 297mm; margin: 10mm auto; background: #fff; position: relative; overflow: hidden;
     display: grid; grid-template-columns: 105mm 105mm; grid-template-rows: 148.5mm 148.5mm; page-break-after: always; }
   .sheet:last-child { page-break-after: auto; }
   .slot { display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .slot .page { margin: 0; flex-shrink: 0; transform: scale(.86); page-break-after: auto; }
-  /* spadávka: 2 mm po zmenšení (box-shadow se škáluje s prvkem) */
-  .slot .front { box-shadow: 0 0 0 calc(2mm / .86) #0a0a0f; }
+  .slot .page { margin: 0; flex-shrink: 0; transform: scale(.88); border-radius: 3.4mm; page-break-after: auto; }
   .tick { position: absolute; background: #c4c4cc; }
   @media print { .sheet { margin: 0; } }
 </style>
@@ -155,30 +150,18 @@
         slot.appendChild(page.cloneNode(true));
         sheet.appendChild(slot);
       }
+      // Značky řezu jen na přední straně: střed archu na výšku i na šířku.
+      if (i === 0) {
+        [['104.9mm', '5.5mm', '.2mm', '3mm'], ['104.9mm', '288.5mm', '.2mm', '3mm'],
+         ['5.5mm', '148.4mm', '3mm', '.2mm'], ['201.5mm', '148.4mm', '3mm', '.2mm']].forEach(function (t) {
+          var m = document.createElement('i');
+          m.className = 'tick';
+          m.style.cssText = 'left:' + t[0] + ';top:' + t[1] + ';width:' + t[2] + ';height:' + t[3];
+          sheet.appendChild(m);
+        });
+      }
       page.parentNode.replaceChild(sheet, page);
     });
-
-    // Značky řezu jen na přední straně. Linky řezu jsou okraje tmavých ploch;
-    // každá dostane značku ve středovém kříži mezi letáky (mimo spadávku),
-    // protože kraje archu tiskárna nepotiskne.
-    var front = document.querySelector('.sheet');
-    var mm = 96 / 25.4, S = front.getBoundingClientRect();
-    var xs = [], ys = [];
-    front.querySelectorAll('.page').forEach(function (pg) {
-      var r = pg.getBoundingClientRect();
-      xs.push((r.left - S.left) / mm, (r.right - S.left) / mm);
-      ys.push((r.top - S.top) / mm, (r.bottom - S.top) / mm);
-    });
-    function uniq(a) { return a.map(function (v) { return Math.round(v * 100) / 100; }).filter(function (v, k, arr) { return arr.indexOf(v) === k; }); }
-    var LEN = 5, T = 0.15;
-    function tick(x, y, w, h) {
-      var m = document.createElement('i');
-      m.className = 'tick';
-      m.style.cssText = 'left:' + x + 'mm;top:' + y + 'mm;width:' + w + 'mm;height:' + h + 'mm';
-      front.appendChild(m);
-    }
-    uniq(xs).forEach(function (x) { tick(x - T / 2, 148.5 - LEN / 2, T, LEN); });  // svislé řezy
-    uniq(ys).forEach(function (y) { tick(105 - LEN / 2, y - T / 2, LEN, T); });    // vodorovné řezy
   }
 </script>
 

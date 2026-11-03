@@ -20,11 +20,10 @@ grafiku na pozadí). PDF je připravené rovnou pro tiskárnu.
 ### Domácí tisk letáků (Canon i-SENSYS MF650C)
 
 `letak-a6-4na-a4.pdf` vznikne z `letak-a6.html#a4`: 4 letáky na arch A4, strana 1
-přední, strana 2 zadní. Letáky jsou zmenšené na 86 % (90 × 127 mm), protože
-tiskárna kolem dokola ~5 mm nepotiskne. Řeže se po okraji tmavé plochy: rohy jsou
-rovné a tmavé pozadí přesahuje 2 mm přes linku řezu, takže po oříznutí nezůstane
-bílý proužek. Linky řezu jsou 7,3 mm od boků a 10,6 mm od horního a dolního
-okraje papíru, spadávka končí 5,3 mm od kraje, tedy ještě v tiskové ploše.
+přední, strana 2 zadní. Letáky jsou zmenšené na 88 % (92 × 130 mm) s bílým
+rámečkem, protože tiskárna kolem dokola ~5 mm nepotiskne a tmavá přední strana
+by jinak měla bílé pruhy jen na dvou stranách. Tmavé karty jsou 6,3 mm od boků
+a 9,1 mm od horního a dolního okraje papíru.
 
 - **Papír:** A4, křídový (coated) pro barevné laserové tiskárny, matný nebo
   saténový (silk), 170–200 g/m². Canon uvádí pro tuto řadu 60–163 g/m²,
@@ -36,11 +35,8 @@ okraje papíru, spadávka končí 5,3 mm od kraje, tedy ještě v tiskové ploš
 - **Oboustranný tisk:** automaticky umí jen MF655Cdw a MF657Cdw. Na MF651Cw,
   nebo když duplex silný papír nevezme, ručně: vytisknout stranu 1, stoh otočit
   a vložit zpět, vytisknout stranu 2. Napřed jeden zkušební arch.
-- **Řezání:** přední stranou nahoru, po jednom archu. Každý okraj tmavé plochy
-  má šedou značku ve středovém kříži mezi letáky (na krajích archu by ji tiskárna
-  nevytiskla). Čtyři svislé řezy podle značek mezi řádky, pak čtyři vodorovné
-  podle značek mezi sloupci; 8 řezů na arch, vyjdou 4 letáky a odpad. Řez
-  může minout o milimetr, spadávka ho schová.
+- **Řezání:** dvěma řezy přesně napůl (105 mm a 148,5 mm), šedé značky na
+  přední straně ukazují kde. Rámeček odpustí milimetr nepřesnosti.
 - **Počet:** (stoly + ~20 do foyer) ÷ 4 = archů A4, plus pár archů navíc.
 
 Nálepky jsme zrušili. Podklad zůstává ve složce (`nalepky.html`, `nalepky-a4.pdf`),

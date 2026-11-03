@@ -29,19 +29,30 @@
   const burger = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
 
+  function setMenu(open) {
+    burger.classList.toggle('active', open);
+    navLinks.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
   burger.addEventListener('click', function () {
-    burger.classList.toggle('active');
-    navLinks.classList.toggle('open');
-    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    setMenu(!navLinks.classList.contains('open'));
   });
 
-  // Close nav on link click
-  navLinks.querySelectorAll('.nav__link').forEach(function (link) {
-    link.addEventListener('click', function () {
-      burger.classList.remove('active');
-      navLinks.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  // Close nav on link click, Escape, or when the viewport grows past mobile
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && navLinks.classList.contains('open')) setMenu(false);
   });
 
   // --- Scroll Reveal ---

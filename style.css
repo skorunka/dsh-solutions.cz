@@ -105,11 +105,22 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+/* Rozmazané pozadí je na pseudoprvku, ne na .nav: backdrop-filter dělá
+   z prvku rám pro potomky s position: fixed, a mobilní menu by se pak
+   roztáhlo jen na výšku lišty místo celé obrazovky. */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: var(--bg-nav);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition);
 }
 
 .nav__container {
@@ -301,6 +312,10 @@ img {
 .btn--lg {
   padding: 14px 32px;
   font-size: 0.95rem;
+}
+
+.nav__menu-cta {
+  display: none;
 }
 
 .nav__cta {
@@ -1796,29 +1811,104 @@ body.lightbox-open {
 
   .nav__links {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1;
     background: var(--bg);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    transform: translateX(100%);
-    transition: transform var(--transition);
+    gap: 8px;
+    padding: 80px 24px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
   }
 
   .nav__links.open {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
   }
 
   .nav__link {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 12px 24px;
+    min-width: 220px;
+    text-align: center;
+    border-radius: var(--radius);
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__link:active {
+    background: var(--bg-card);
+  }
+
+  .nav__links .nav__menu-cta {
+    display: inline-flex;
+    margin-top: 24px;
+    min-width: 220px;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+
+  .nav__logo,
+  .nav__actions {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Cíle pro prst aspoň 44 px vysoké (doporučení Apple i Google). */
+  .nav__logo {
+    min-height: 44px;
+  }
+
+  .project__link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .chip span {
+    padding: 10px 14px;
+  }
+
+  .footer__links {
+    gap: 0 4px;
+  }
+
+  .footer__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 10px;
+  }
+
+  /* Drobné štítky na telefonu aspoň 12 px. */
+  .badge,
+  .project__tags li,
+  .project__count,
+  .project__bar em,
+  .nav__logo-icon {
+    font-size: 0.75rem;
   }
 
   .nav__burger {
     display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   .hero__title {

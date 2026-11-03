@@ -443,28 +443,66 @@
         </div>
         <div class="contact__form-wrap reveal">
           <form class="contact__form" id="contactForm" action="https://formspree.io/f/mnjgzkey" method="POST" novalidate>
-            <div class="form__group">
-              <label for="name" class="form__label">Jméno</label>
-              <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
-            </div>
-            <div class="form__group">
-              <label for="email" class="form__label">E-mail</label>
-              <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+            <fieldset class="form__topics">
+              <legend class="form__label">O co jde? <span class="form__optional">nepovinné</span></legend>
+              <div class="form__chips">
+                <label class="chip"><input type="checkbox" data-topic value="Aplikace na míru"><span>Aplikace na míru</span></label>
+                <label class="chip"><input type="checkbox" data-topic value="Web nebo e-shop"><span>Web nebo e-shop</span></label>
+                <label class="chip"><input type="checkbox" data-topic value="AI ve firmě"><span>AI ve firmě</span></label>
+                <label class="chip"><input type="checkbox" data-topic value="Zatím jen nápad"><span>Zatím jen nápad</span></label>
+              </div>
+            </fieldset>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="name" class="form__label">Jméno</label>
+                <input type="text" id="name" name="name" class="form__input" required autocomplete="name" aria-describedby="name-error">
+                <p class="form__error" id="name-error" aria-live="polite"></p>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">E-mail</label>
+                <input type="email" id="email" name="email" class="form__input" required autocomplete="email" inputmode="email" spellcheck="false" aria-describedby="email-error">
+                <p class="form__error" id="email-error" aria-live="polite"></p>
+              </div>
             </div>
             <div class="form__group">
               <label for="message" class="form__label">Co potřebujete vyřešit?</label>
-              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required placeholder="Stačí pár vět. Třeba: „Objednávky řešíme přes WhatsApp a Excel a už to nezvládáme.“"></textarea>
+              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required aria-describedby="message-error" placeholder="Stačí pár vět. Třeba: „Objednávky řešíme přes WhatsApp a Excel a už to nezvládáme.“"></textarea>
+              <p class="form__error" id="message-error" aria-live="polite"></p>
             </div>
             <div class="form__group form__group--consent">
               <label class="form__checkbox">
-                <input type="checkbox" name="gdpr_consent" required>
-                <span class="form__checkmark"></span>
+                <input type="checkbox" name="gdpr_consent" required aria-describedby="consent-error">
                 <span>Souhlasím se <a href="#privacy" class="link">zpracováním osobních údajů</a> za účelem odpovědi na můj dotaz.</span>
               </label>
+              <p class="form__error" id="consent-error" aria-live="polite"></p>
             </div>
+            <input type="hidden" name="tema" value="">
             <input type="hidden" name="zdroj" value="">
-            <button type="submit" class="btn btn--primary btn--full">Odeslat a domluvit konzultaci</button>
+            <input type="hidden" name="_subject" value="Poptávka z webu dsh-solutions.cz">
+            <div class="form__trap" aria-hidden="true">
+              <label>Nevyplňujte <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <div class="form__alert" role="alert" hidden></div>
+            <button type="submit" class="btn btn--primary btn--full form__submit">
+              <span class="form__submit-label">Odeslat a domluvit konzultaci</span>
+              <span class="form__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form__note">Ozveme se do 24 hodin. Žádný spam, žádné automatické e-maily.</p>
           </form>
+
+          <div class="form-success" id="formSuccess" hidden>
+            <div class="form-success__icon" aria-hidden="true">
+              <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+            </div>
+            <h3 class="form-success__title" tabindex="-1">Díky, zpráva dorazila.</h3>
+            <p class="form-success__lead">Ozveme se do 24 hodin na <strong data-success-email></strong>.</p>
+            <ol class="form-success__steps">
+              <li><b>Přečteme si to</b><span>Osobně, žádná automatická odpověď.</span></li>
+              <li><b>Zavoláme si</b><span>30 minut, zdarma a bez závazků.</span></li>
+              <li><b>Dostanete návrh</b><span>Do pár dnů řešení a cenu, srozumitelně.</span></li>
+            </ol>
+            <a href="#portfolio" class="link form-success__more">Mezitím si projděte, co jsme postavili</a>
+          </div>
         </div>
       </div>
     </div>

@@ -99,9 +99,30 @@
     });
   });
 
-  // --- Contact Form (basic client-side validation + UX) ---
+  // --- Contact Form ---
+  // Odesílá se na pozadí (fetch na Formspree), návštěvník zůstává na webu
+  // a vidí vlastní potvrzení. Když odeslání na pozadí selže na straně
+  // serveru, formulář se odešle klasicky, aby se žádná poptávka neztratila.
   var form = document.getElementById('contactForm');
   if (form) {
+    var success = document.getElementById('formSuccess');
+    var submitBtn = form.querySelector('.form__submit');
+    var submitLabel = form.querySelector('.form__submit-label');
+    var alertBox = form.querySelector('.form__alert');
+    var fields = {
+      name: form.querySelector('#name'),
+      email: form.querySelector('#email'),
+      message: form.querySelector('#message'),
+      consent: form.querySelector('[name="gdpr_consent"]')
+    };
+    var errors = {
+      name: form.querySelector('#name-error'),
+      email: form.querySelector('#email-error'),
+      message: form.querySelector('#message-error'),
+      consent: form.querySelector('#consent-error')
+    };
+    var attempted = false;
+
     // Odkud návštěvník přišel. Značku nese QR kód na tištěných materiálech
     // (?utm_source=ples), hodnota se připojí k e-mailu z formuláře.
     // Čte se jen z adresy aktuální stránky, nic se neukládá do prohlížeče.
@@ -120,33 +141,187 @@
       }
     }
 
-    form.addEventListener('submit', function (e) {
-      var email = form.querySelector('#email');
-      var consent = form.querySelector('[name="gdpr_consent"]');
-
-      // Basic email check
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        e.preventDefault();
-        email.focus();
-        email.style.borderColor = '#ff4444';
-        return;
+    // Překlepy v nejčastějších doménách: "gmial.com" → nabídne "gmail.com".
+    var DOMAINS = ['gmail.com', 'seznam.cz', 'email.cz', 'centrum.cz', 'outlook.com', 'hotmail.com',
+      'icloud.com', 'post.cz', 'volny.cz', 'atlas.cz', 'yahoo.com', 'tiscali.cz', 'outlook.cz'];
+    function distance(a, b) {
+      var d = [];
+      for (var i = 0; i <= a.length; i++) { d[i] = [i]; }
+      for (var j = 1; j <= b.length; j++) { d[0][j] = j; }
+      for (i = 1; i <= a.length; i++) {
+        for (j = 1; j <= b.length; j++) {
+          d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        }
       }
+      return d[a.length][b.length];
+    }
+    function suggestEmail(value) {
+      var at = value.lastIndexOf('@');
+      if (at < 1) return null;
+      var domain = value.slice(at + 1).toLowerCase();
+      if (!domain || DOMAINS.indexOf(domain) !== -1) return null;
+      var best = null, bestD = 3;
+      DOMAINS.forEach(function (candidate) {
+        var dist = distance(domain, candidate);
+        if (dist < bestD) { bestD = dist; best = candidate; }
+      });
+      return best ? value.slice(0, at + 1) + best : null;
+    }
 
-      // GDPR consent check
-      if (consent && !consent.checked) {
-        e.preventDefault();
-        consent.parentElement.style.color = '#ff4444';
-        return;
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    function check(key) {
+      var el = fields[key];
+      var msg = '';
+      if (key === 'name' && !el.value.trim()) msg = 'Napište, jak vám máme říkat.';
+      if (key === 'email') {
+        var v = el.value.trim();
+        if (!v) msg = 'Bez e-mailu se vám nemáme jak ozvat.';
+        else if (!EMAIL_RE.test(v)) msg = 'Tohle nevypadá jako e-mail. Zkontrolujte ho prosím.';
+      }
+      if (key === 'message') {
+        var len = el.value.trim().length;
+        if (!len) msg = 'Napište aspoň pár slov, o co jde.';
+        else if (len < 10) msg = 'Ještě pár slov, ať víme, o co jde.';
+      }
+      if (key === 'consent' && !el.checked) msg = 'Bez souhlasu vám nemůžeme odpovědět.';
+
+      errors[key].classList.remove('form__error--hint');
+      errors[key].textContent = msg;
+      if (key !== 'consent') el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+
+      // Návrh opravy překlepu v e-mailu (jen když je adresa jinak platná).
+      if (key === 'email' && !msg) {
+        var fix = suggestEmail(el.value.trim());
+        if (fix) {
+          errors.email.classList.add('form__error--hint');
+          errors.email.textContent = 'Nemysleli jste ';
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = fix;
+          btn.addEventListener('click', function () {
+            el.value = fix;
+            check('email');
+            el.focus();
+          });
+          errors.email.appendChild(btn);
+          errors.email.appendChild(document.createTextNode('?'));
+        }
+      }
+      return !msg;
+    }
+
+    Object.keys(fields).forEach(function (key) {
+      var el = fields[key];
+      el.addEventListener(key === 'consent' ? 'change' : 'input', function () {
+        if (attempted || el.getAttribute('aria-invalid') === 'true') check(key);
+      });
+      if (key !== 'consent') {
+        el.addEventListener('blur', function () {
+          if (attempted || el.value.trim()) check(key);
+        });
       }
     });
 
-    // Reset validation styles on input
-    form.querySelectorAll('.form__input').forEach(function (input) {
-      input.addEventListener('input', function () {
-        this.style.borderColor = '';
+    // Textové pole roste s textem, Ctrl/Cmd+Enter odešle.
+    fields.message.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight + 2, 480) + 'px';
+    });
+    fields.message.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        form.requestSubmit ? form.requestSubmit() : submitBtn.click();
+      }
+    });
+
+    function setLoading(on) {
+      submitBtn.classList.toggle('is-loading', on);
+      submitBtn.disabled = on;
+      submitLabel.textContent = on ? 'Odesílám…' : 'Odeslat a domluvit konzultaci';
+    }
+
+    function showAlert(html) {
+      alertBox.innerHTML = html;
+      alertBox.hidden = false;
+    }
+
+    function showSuccess() {
+      success.querySelector('[data-success-email]').textContent = fields.email.value.trim();
+      form.classList.add('is-leaving');
+      setTimeout(function () {
+        form.hidden = true;
+        success.hidden = false;
+        var rect = success.getBoundingClientRect();
+        if (rect.top < 80 || rect.top > window.innerHeight - 120) {
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        success.querySelector('.form-success__title').focus({ preventScroll: true });
+      }, 250);
+    }
+
+    function mailtoFallback() {
+      var body = fields.message.value.trim() + '\n\n' + fields.name.value.trim();
+      return 'mailto:info@dsh-solutions.cz?subject=' + encodeURIComponent('Poptávka z webu') +
+        '&body=' + encodeURIComponent(body);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      attempted = true;
+      alertBox.hidden = true;
+
+      var ok = ['name', 'email', 'message', 'consent'].map(check);
+      var firstBad = ['name', 'email', 'message', 'consent'].filter(function (k, i) { return !ok[i]; })[0];
+      if (firstBad) {
+        fields[firstBad].focus();
+        return;
+      }
+
+      // Bot vyplnil past: tvářit se jako úspěch, nic neposílat.
+      if (form.querySelector('[name="_gotcha"]').value) {
+        showSuccess();
+        return;
+      }
+
+      var topics = Array.prototype.slice.call(form.querySelectorAll('[data-topic]:checked'))
+        .map(function (c) { return c.value; });
+      form.querySelector('[name="tema"]').value = topics.join(', ');
+      var fromBall = /ples/.test(origin ? origin.value : '');
+      form.querySelector('[name="_subject"]').value =
+        (fromBall ? '[ples] ' : '') + 'Poptávka z webu: ' + fields.name.value.trim();
+
+      if (!window.fetch || !window.FormData) {
+        form.submit();
+        return;
+      }
+
+      setLoading(true);
+      var controller = window.AbortController ? new AbortController() : null;
+      var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+        signal: controller ? controller.signal : undefined
+      }).then(function (res) {
+        clearTimeout(timer);
+        if (res.ok) {
+          showSuccess();
+          return;
+        }
+        // Server odmítl odeslání na pozadí (např. vyžaduje reCAPTCHA):
+        // pošleme formulář klasicky, poptávka se tak neztratí.
+        form.submit();
+      }).catch(function () {
+        clearTimeout(timer);
+        setLoading(false);
+        showAlert('Zprávu se nepodařilo odeslat, nejspíš vypadlo připojení. Zkuste to prosím znovu, ' +
+          'nebo nám napište přímo na <a href="' + mailtoFallback() + '">info@dsh-solutions.cz</a>.');
       });
     });
   }
+
   // --- Project Gallery Lightbox ---
   var lightbox = document.getElementById('lightbox');
   if (lightbox) {

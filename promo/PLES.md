@@ -9,12 +9,35 @@ se dá vytisknout nebo poslat pořadatelům tak, jak je.
 
 | Soubor | K čemu | Jak použít |
 |---|---|---|
-| `letak-a6.html` / `letak-a6.pdf` | Letáček A6, přední + zadní strana | Tisk na matný papír 250–300 g. 100–150 ks na stoly a k tombole. |
+| `letak-a6.html` / `letak-a6.pdf` | Letáček A6, přední + zadní strana | Pro tiskárnu (online tisk): matný papír 250–300 g. |
+| `letak-a6-4na-a4.pdf` | Tentýž letáček 4× na arch A4 pro domácí tisk | Jeden na každý stůl a pár do foyer. Návod níže. |
 | `slide.html` / `slide-1920x1080.png` | Slide na projektor 16:9 | Poslat pořadatelům do smyčky sponzorů. |
 | `qr-dsh.svg` / `qr-dsh.png` / `qr-dsh-white.svg` | QR kód na web s UTM (`utm_source=ples`) | Stejný QR na všem, ať jde měřit, kolik lidí přišlo z plesu. |
 
 Letáček se otevře v prohlížeči a tiskne přes Ctrl+P (vypnout okraje, zapnout
 grafiku na pozadí). PDF je připravené rovnou pro tiskárnu.
+
+### Domácí tisk letáků (Canon i-SENSYS MF650C)
+
+`letak-a6-4na-a4.pdf` vznikne z `letak-a6.html#a4`: 4 letáky na arch A4, strana 1
+přední, strana 2 zadní. Letáky jsou zmenšené na 88 % (92 × 130 mm) s bílým
+rámečkem, protože tiskárna kolem dokola ~5 mm nepotiskne a tmavá přední strana
+by jinak měla bílé pruhy jen na dvou stranách. Tmavé karty jsou 6,3 mm od boků
+a 9,1 mm od horního a dolního okraje papíru.
+
+- **Papír:** A4, křídový (coated) pro barevné laserové tiskárny, matný nebo
+  saténový (silk), 170–200 g/m². Canon uvádí pro tuto řadu 60–163 g/m²,
+  s křídovým papírem až 200 g/m². Lesklý ne: pod světly plesu se leskne
+  a chytá otisky.
+- **Ovladač:** typ papíru podle balení (u Canonu „Coated"/„Natíraný" nebo
+  „Heavy"/„Silný" s odpovídajícím číslem), měřítko 100 % / skutečná velikost,
+  oboustranně s otáčením **podél dlouhé strany**.
+- **Oboustranný tisk:** automaticky umí jen MF655Cdw a MF657Cdw. Na MF651Cw,
+  nebo když duplex silný papír nevezme, ručně: vytisknout stranu 1, stoh otočit
+  a vložit zpět, vytisknout stranu 2. Napřed jeden zkušební arch.
+- **Řezání:** dvěma řezy přesně napůl (105 mm a 148,5 mm), šedé značky na
+  přední straně ukazují kde. Rámeček odpustí milimetr nepřesnosti.
+- **Počet:** (stoly + ~20 do foyer) ÷ 4 = archů A4, plus pár archů navíc.
 
 Nálepky jsme zrušili. Podklad zůstává ve složce (`nalepky.html`, `nalepky-a4.pdf`),
 kdyby se k nim někdy vrátilo, ale do plánu na ples nepatří.

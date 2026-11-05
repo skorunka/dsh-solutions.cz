@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2026-11-03.2">
+  <link rel="stylesheet" href="style.css?v=2026-11-05.1">
 
   <script type="application/ld+json">
   {
@@ -74,6 +74,7 @@
       <div class="nav__links" id="navLinks">
         <a href="#about" class="nav__link">Proč DSH</a>
         <a href="#services" class="nav__link">Co umíme</a>
+        <a href="#vyzkouset" class="nav__link nav__link--ai" hidden>Vyzkoušet</a>
         <a href="#portfolio" class="nav__link">Projekty</a>
         <a href="#contact" class="nav__link">Kontakt</a>
         <a href="#contact" class="btn btn--primary nav__menu-cta">Nezávazná konzultace zdarma</a>
@@ -226,6 +227,38 @@
           <h4>Stavíme a ladíme</h4>
           <p>Výsledek vidíte průběžně. Platíte za to, co funguje.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI ukázka: skrytá, dokud funkce na Vercelu neodpoví { enabled: true } (script.js) -->
+  <section class="section ai" id="vyzkouset" hidden>
+    <div class="container container--narrow">
+      <div class="section__header reveal">
+        <span class="section__label">Vyzkoušejte si to</span>
+        <h2 class="section__title">Popište, co vás zdržuje. <span class="gradient-text">Návrh máte za pár vteřin.</span></h2>
+        <p class="section__lead">Dvě věty stačí. AI, se kterou stavíme, vám rovnou načrtne, jak by to vyřešila aplikace na míru. Bez registrace, bez obchodníka.</p>
+      </div>
+      <div class="ai__card reveal">
+        <form class="ai__form" id="aiForm" novalidate>
+          <label for="aiText" class="form__label">Co ve firmě řešíte ručně, v Excelu nebo přes WhatsApp?</label>
+          <textarea id="aiText" class="form__input form__textarea" rows="3" maxlength="700" placeholder="Třeba: Objednávky nám chodí přes WhatsApp a e-mail, přepisujeme je do Excelu a každý týden na něco zapomeneme."></textarea>
+          <p class="form__error ai__error" aria-live="polite"></p>
+          <div class="ai__row">
+            <div class="ai__examples">
+              <span>Zkuste:</span>
+              <button type="button" data-example="Objednávky nám chodí přes WhatsApp a e-mail, přepisujeme je do Excelu a každý týden na něco zapomeneme.">Objednávky v Excelu</button>
+              <button type="button" data-example="Rezervace kurtů vedeme v papírovém sešitě u baru, lidi volají, kdy je volno, a občas se dva potkají na jednom kurtu.">Rezervace v sešitě</button>
+              <button type="button" data-example="Faktury od dodavatelů chodí e-mailem jako PDF a účetní je každý měsíc ručně přepisuje do systému.">Faktury z e-mailů</button>
+            </div>
+            <button type="submit" class="btn btn--primary form__submit ai__submit">
+              <span class="form__submit-label">Navrhnout řešení</span>
+              <span class="form__spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="ai__note">Text vyhodnotí AI model společnosti Anthropic. Neukládáme ho a nespojujeme s vámi; nepište do něj prosím osobní údaje. <a href="#privacy" class="link">Více v ochraně údajů</a>.</p>
+        </form>
+        <div class="ai__result" id="aiResult" hidden></div>
       </div>
     </div>
   </section>
@@ -523,6 +556,7 @@
 
         <h3>2. Rozsah zpracování osobních údajů</h3>
         <p>Prostřednictvím kontaktního formuláře zpracováváme: jméno, e-mailovou adresu a obsah zprávy. Tyto údaje slouží výhradně k zodpovězení vašeho dotazu.</p>
+        <p>V ukázce „Vyzkoušejte si to“ zpracováváme text, který do ní napíšete, výhradně k vytvoření návrhu, který vám hned zobrazíme. Text neukládáme, nespojujeme ho s vaší osobou ani s jinými údaji a nepoužíváme ho k ničemu dalšímu. Do ukázky prosím nepište osobní údaje. Právním základem je náš oprávněný zájem předvést, co umíme (čl. 6 odst. 1 písm. f) GDPR).</p>
 
         <h3>3. Právní základ zpracování</h3>
         <p>Osobní údaje zpracováváme na základě vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR), který udělujete zaškrtnutím příslušného pole v kontaktním formuláři.</p>
@@ -531,7 +565,7 @@
         <p>Osobní údaje z kontaktního formuláře uchováváme po dobu nezbytnou k vyřízení vašeho dotazu, nejdéle však 1 rok od posledního kontaktu.</p>
 
         <h3>5. Příjemci údajů</h3>
-        <p>Vaše údaje nepředáváme třetím stranám s výjimkou poskytovatele služby pro zpracování formuláře (Formspree, Inc., USA — na základě standardních smluvních doložek dle čl. 46 GDPR) a služby pro anonymní statistiku návštěvnosti GoatCounter (viz bod 8).</p>
+        <p>Vaše údaje nepředáváme třetím stranám s výjimkou poskytovatele služby pro zpracování formuláře (Formspree, Inc., USA — na základě standardních smluvních doložek dle čl. 46 GDPR) a služby pro anonymní statistiku návštěvnosti GoatCounter (viz bod 8). Text z ukázky „Vyzkoušejte si to“ vyhodnocuje AI model provozovaný společností Anthropic PBC (USA) na základě standardních smluvních doložek dle čl. 46 GDPR; Anthropic jej nepoužívá k trénování modelů a uchovává jej jen krátkodobě pro zajištění bezpečnosti služby.</p>
 
         <h3>6. Vaše práva</h3>
         <p>Máte právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Svůj souhlas můžete kdykoliv odvolat zasláním e-mailu na <a href="mailto:info@dsh-solutions.cz" class="link">info@dsh-solutions.cz</a>.</p>
@@ -591,7 +625,7 @@
     <div class="lightbox__thumbs"></div>
   </div>
 
-  <script src="script.js?v=2026-11-03.2"></script>
+  <script src="script.js?v=2026-11-05.1"></script>
   <!-- Anonymní statistika návštěvnosti bez cookies: https://dsh.goatcounter.com -->
   <script data-goatcounter="https://dsh.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

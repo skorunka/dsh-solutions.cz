@@ -1,0 +1,10 @@
+{
+  "name": "dsh-ai",
+  "private": true,
+  "description": "AI ukázka pro dsh-solutions.cz: z popisu problému navrhne aplikaci na míru.",
+  "type": "module",
+  "engines": { "node": "22.x" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0"
+  }
+}

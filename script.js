@@ -415,4 +415,197 @@
       touchX = null;
     }, { passive: true });
   }
+
+  // --- AI ukázka: z popisu problému navrhne aplikaci ---
+  // Sekce i odkaz v menu jsou skryté, dokud funkce na Vercelu neodpoví
+  // { enabled: true }. Když neběží, dojde kredit nebo je vypnutá, nic se neukáže.
+  var AI_API = window.DSH_AI_API || 'https://dsh-ai.vercel.app/api/navrh';
+  var aiSection = document.getElementById('vyzkouset');
+  var aiForm = document.getElementById('aiForm');
+  if (aiSection && aiForm && window.fetch && window.AbortController) {
+    var aiText = document.getElementById('aiText');
+    var aiResult = document.getElementById('aiResult');
+    var aiSubmit = aiForm.querySelector('.ai__submit');
+    var aiSubmitLabel = aiSubmit.querySelector('.form__submit-label');
+    var aiError = aiForm.querySelector('.ai__error');
+    var aiLastText = '';
+
+    function aiFetch(options, ms) {
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, ms);
+      options.signal = controller.signal;
+      return fetch(AI_API, options).then(function (res) {
+        clearTimeout(timer);
+        return res;
+      }, function (err) {
+        clearTimeout(timer);
+        throw err;
+      });
+    }
+
+    function aiTrack(path) {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: path, title: path, event: true });
+      }
+    }
+
+    aiFetch({ method: 'GET', cache: 'no-store' }, 6000).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      if (!data || data.enabled !== true) return;
+      aiSection.hidden = false;
+      document.querySelectorAll('.nav__link--ai').forEach(function (a) { a.hidden = false; });
+      checkReveal();
+    }).catch(function () { /* funkce neběží, sekce zůstane skrytá */ });
+
+    aiForm.querySelectorAll('[data-example]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        aiText.value = btn.getAttribute('data-example');
+        aiText.dispatchEvent(new Event('input'));
+        aiText.focus();
+      });
+    });
+
+    aiText.addEventListener('input', function () {
+      aiError.textContent = '';
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight + 2, 400) + 'px';
+    });
+    aiText.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        aiForm.requestSubmit ? aiForm.requestSubmit() : aiSubmit.click();
+      }
+    });
+
+    function setAiLoading(on) {
+      aiSubmit.classList.toggle('is-loading', on);
+      aiSubmit.disabled = on;
+      aiSubmitLabel.textContent = on ? 'Přemýšlím…' : 'Navrhnout řešení';
+    }
+
+    function el(tag, cls, text) {
+      var node = document.createElement(tag);
+      if (cls) node.className = cls;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+
+    function button(label, cls, onClick) {
+      var b = el('button', 'btn ' + cls, label);
+      b.type = 'button';
+      b.addEventListener('click', onClick);
+      return b;
+    }
+
+    function aiReset() {
+      aiResult.hidden = true;
+      aiResult.innerHTML = '';
+      aiText.focus();
+    }
+
+    // Předá text a návrh do kontaktního formuláře.
+    function aiHandoff(navrh) {
+      var message = document.getElementById('message');
+      if (message) {
+        var parts = [aiLastText];
+        if (navrh) parts.push('Návrh z ukázky na webu: ' + navrh.nazev + '. ' + navrh.shrnuti);
+        message.value = parts.join('\n\n');
+        message.dispatchEvent(new Event('input'));
+        var chip = document.querySelector('[data-topic][value="Aplikace na míru"]');
+        if (chip && navrh) chip.checked = true;
+      }
+      var contact = document.getElementById('contact');
+      if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(function () {
+        var name = document.getElementById('name');
+        if (name) name.focus({ preventScroll: true });
+      }, 600);
+      aiTrack(navrh ? 'ai/probrat' : 'ai/napsat');
+    }
+
+    function renderAi(data) {
+      aiResult.innerHTML = '';
+      aiResult.hidden = false;
+      var navrh = data && data.ok ? data.navrh : null;
+      if (navrh && navrh.relevantni) {
+        aiResult.appendChild(el('p', 'ai__eyebrow', 'Návrh řešení'));
+        aiResult.appendChild(el('h3', null, navrh.nazev));
+        aiResult.appendChild(el('p', 'ai__sum', navrh.shrnuti));
+        if (navrh.jak_by_to_fungovalo.length) {
+          aiResult.appendChild(el('h4', null, 'Jak by to fungovalo'));
+          var ul = el('ul');
+          navrh.jak_by_to_fungovalo.forEach(function (item) { ul.appendChild(el('li', null, item)); });
+          aiResult.appendChild(ul);
+        }
+        if (navrh.co_usetri) {
+          aiResult.appendChild(el('h4', null, 'Co to ušetří'));
+          aiResult.appendChild(el('p', null, navrh.co_usetri));
+        }
+        if (navrh.prvni_krok) {
+          aiResult.appendChild(el('h4', null, 'Čím bychom začali'));
+          aiResult.appendChild(el('p', null, navrh.prvni_krok));
+        }
+        var actions = el('div', 'ai__actions');
+        actions.appendChild(button('Chci to probrat', 'btn--primary', function () { aiHandoff(navrh); }));
+        actions.appendChild(button('Zkusit jiný problém', 'btn--outline', aiReset));
+        aiResult.appendChild(actions);
+        aiResult.appendChild(el('p', 'ai__disclaimer', 'První nástřel od AI, se kterou stavíme. Přesné zadání a cenu probereme spolu.'));
+        aiTrack('ai/navrh');
+      } else if (navrh) {
+        var soft = el('div', 'ai__soft');
+        soft.appendChild(el('p', null, navrh.shrnuti));
+        soft.appendChild(button('Zkusit znovu', 'btn--outline', aiReset));
+        aiResult.appendChild(soft);
+      } else {
+        var duvod = data && data.duvod;
+        var texts = {
+          limit: 'Zkoušek je teď hodně najednou. Zkuste to za chvíli, nebo nám rovnou napište a probereme to osobně.',
+          napor: 'Teď je tu nápor. Zkuste to za chvíli, nebo nám rovnou napište a ozveme se do 24 hodin.',
+          vstup: 'Napište prosím jednu až několik vět, nejvýš 700 znaků.',
+          mimo: 'Tohle ukázka neumí posoudit. Zkuste popsat, co ve firmě řešíte ručně.'
+        };
+        var box = el('div', 'ai__soft');
+        box.appendChild(el('p', null, texts[duvod] || 'Ukázka teď není dostupná. Napište nám pár vět a ozveme se do 24 hodin.'));
+        if (duvod === 'vstup' || duvod === 'mimo') {
+          box.appendChild(button('Zkusit znovu', 'btn--outline', aiReset));
+        } else {
+          box.appendChild(button('Napsat nám', 'btn--primary', function () { aiHandoff(null); }));
+        }
+        aiResult.appendChild(box);
+      }
+      aiResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    aiForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var text = aiText.value.trim();
+      aiError.textContent = '';
+      if (text.length < 15) {
+        aiError.textContent = 'Napište aspoň jednu celou větu, ať je z čeho vycházet.';
+        aiText.focus();
+        return;
+      }
+      if (text.length > 700) {
+        aiError.textContent = 'Zkraťte to prosím na pár vět, nejvýš 700 znaků.';
+        aiText.focus();
+        return;
+      }
+      aiLastText = text;
+      setAiLoading(true);
+      aiFetch({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: text })
+      }, 25000).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        setAiLoading(false);
+        renderAi(data);
+      }).catch(function () {
+        setAiLoading(false);
+        renderAi({ ok: false, duvod: 'napor' });
+      });
+    });
+  }
 })();

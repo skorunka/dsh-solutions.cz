@@ -13,7 +13,7 @@ vlastní doména je v `CNAME`.
 - `images/<projekt>/*.webp` — screenshoty projektů do galerie
 - `promo/` — podklady k maturitnímu plesu: letáček A6, nálepky, slide na projektor, QR kódy, `PLES.md`
 - `ples/` — neodkazovaná stránka pro Anežku a spolužáky (`noindex`), odkazuje na soubory v `promo/`
-- `ai/` — serverová funkce AI ukázky („Vyzkoušejte si to“), samostatný projekt na Vercelu (`dsh-ai`),
+- `ai/` — serverová funkce AI ukázky („Vyzkoušejte si to“), samostatný projekt na Vercelu (`dsh-ai-one`),
   root directory `ai`. Web ji volá z `script.js` (`AI_API`). Návod a vypínač: `ai/README.md`.
 
 ## Konvence

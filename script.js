@@ -419,7 +419,7 @@
   // --- AI ukázka: z popisu problému navrhne aplikaci ---
   // Sekce i odkaz v menu jsou skryté, dokud funkce na Vercelu neodpoví
   // { enabled: true }. Když neběží, dojde kredit nebo je vypnutá, nic se neukáže.
-  var AI_API = window.DSH_AI_API || 'https://dsh-ai.vercel.app/api/navrh';
+  var AI_API = window.DSH_AI_API || 'https://dsh-ai-one.vercel.app/api/navrh';
   var aiSection = document.getElementById('vyzkouset');
   var aiForm = document.getElementById('aiForm');
   if (aiSection && aiForm && window.fetch && window.AbortController) {

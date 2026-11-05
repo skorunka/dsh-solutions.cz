@@ -7,7 +7,7 @@ samostatný projekt; web zůstává na GitHub Pages a volá ji přes fetch.
 ## Nasazení (Vercel)
 
 1. Vercel → **Add New → Project** → Import `skorunka/dsh-solutions.cz`.
-2. **Project name:** `dsh-ai` (adresa pak bude `dsh-ai.vercel.app`; `script.js` ji očekává).
+2. Projekt se jmenuje `dsh-ai-one` (adresa `dsh-ai-one.vercel.app`; `script.js` ji očekává).
 3. **Root Directory:** `ai`. Framework preset: Other.
 4. **Environment Variables:**
    - `ANTHROPIC_API_KEY` – klíč z Claude Console
